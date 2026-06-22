@@ -97,6 +97,7 @@
     }
     .filter-custom input[type="month"]:focus { border-color: var(--blue); }
     .filter-custom span { font-size: 12px; color: var(--text-light); }
+    .filter-7d-note { font-size: 10px; color: var(--blue); font-style: italic; }
     .apply-btn {
       padding: 5px 13px; background: var(--blue); color: white;
       border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
@@ -452,6 +453,7 @@
 <!-- FILTER BAR -->
 <div class="filter-bar" id="filterBar">
   <span class="filter-label">Date Range</span>
+  <button class="preset-btn" onclick="setPreset('7d',this)">Last 7 Days</button>
   <button class="preset-btn" onclick="setPreset('30d',this)">Last 30 Days</button>
   <button class="preset-btn" onclick="setPreset('90d',this)">Last 90 Days</button>
   <button class="preset-btn" onclick="setPreset('6m',this)">Last 6 Months</button>
@@ -465,6 +467,7 @@
     <input type="month" id="endDate" value="2026-06" min="2025-09" max="2026-06" />
     <button class="apply-btn" onclick="applyCustom()">Apply</button>
   </div>
+  <span class="filter-7d-note" id="filter7dNote"></span>
   <div class="data-stamp">Refreshed Jun 18, 2026 &nbsp;·&nbsp; Reload to update</div>
 </div>
 
@@ -1185,12 +1188,18 @@ function setPreset(preset, el) {
   document.querySelectorAll('#filterBar .preset-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   if (preset === 'all')  { filter.start = '2025-09'; filter.end = '2026-06'; }
+  else if (preset === '7d')  { filter.start = '2026-06'; filter.end = '2026-06'; }
   else if (preset === '30d') { filter.start = '2026-06'; filter.end = '2026-06'; }
   else if (preset === '90d') { filter.start = '2026-04'; filter.end = '2026-06'; }
   else if (preset === '6m')  { filter.start = '2026-01'; filter.end = '2026-06'; }
   else if (preset === 'ytd') { filter.start = '2026-01'; filter.end = '2026-06'; }
   document.getElementById('startDate').value = filter.start;
   document.getElementById('endDate').value = filter.end;
+  // Trend data is monthly; a true 7-day slice isn't available, so note the approximation.
+  const note = document.getElementById('filter7dNote');
+  if (note) note.textContent = preset === '7d'
+    ? '· Trend charts shown at latest-month resolution — true 7-day activity is in the "Active (7-Day)" tile'
+    : '';
   refreshTimeCharts();
 }
 
@@ -1198,6 +1207,8 @@ function applyCustom() {
   filter.start = document.getElementById('startDate').value;
   filter.end   = document.getElementById('endDate').value;
   document.querySelectorAll('#filterBar .preset-btn').forEach(b => b.classList.remove('active'));
+  const note = document.getElementById('filter7dNote');
+  if (note) note.textContent = '';
   refreshTimeCharts();
 }
 
