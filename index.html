@@ -418,9 +418,9 @@
 <!-- PLATFORM TOGGLE -->
 <div class="plt-row" id="platformBar">
   <label>Platform:</label>
-  <button class="preset-btn active" onclick="setPlatform('both',this)">All Platforms</button>
+  <button class="preset-btn active" onclick="setPlatform('degreed',this)">Degreed</button>
   <button class="preset-btn" onclick="setPlatform('tq',this)">TQ</button>
-  <button class="preset-btn" onclick="setPlatform('degreed',this)">Degreed</button>
+  <button class="preset-btn" onclick="setPlatform('both',this)">All Platforms</button>
 </div>
 
 <!-- PATHWAY FILTER -->
@@ -1247,7 +1247,7 @@ const KPI_DATA = {
 };
 
 // Track active platform so pathway filter can restore it
-let activePlatform = 'both';
+let activePlatform = 'degreed';
 
 function updateKPITiles(platform, pathway) {
   let tiles;
@@ -2082,6 +2082,8 @@ function initAll() {
   initMatrix();
   // Stamps + platform filter
   stampAllCards();
+  updateKPITiles('degreed', null);
+  applyCardVisibility('degreed', null);
 }
 
 // SharePoint iframe fix: use window.onload + delay to ensure frame is fully ready
