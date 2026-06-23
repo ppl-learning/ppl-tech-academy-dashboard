@@ -124,7 +124,7 @@
     .phase-line { flex: 1; height: 1px; background: var(--border); }
 
     /* KPI ROW */
-    .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 18px; }
+    .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 18px; }
     .kpi-card {
       min-width: 0;
       background: var(--card); border-radius: 10px; padding: 16px 18px;
@@ -370,7 +370,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .kpi-row { grid-template-columns: repeat(3, 1fr); }
+      .kpi-row { grid-template-columns: repeat(3, 1fr); }  /* 6→3 cols */
       .g3 { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 960px) {
@@ -468,7 +468,7 @@
     <button class="apply-btn" onclick="applyCustom()">Apply</button>
   </div>
   <span class="filter-7d-note" id="filter7dNote"></span>
-  <div class="data-stamp">Refreshed Jun 18, 2026 &nbsp;·&nbsp; Reload to update</div>
+  <div class="data-stamp">Refreshed Jun 23, 2026 &nbsp;·&nbsp; Reload to update</div>
 </div>
 
 <!-- MAIN -->
@@ -507,15 +507,21 @@
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi4-label">Total Learning Hours</div>
-        <div class="kpi-value" id="kpi4-value">993</div>
-        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 32h</div>
-        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 2.3h / learner</div>
+        <div class="kpi-value" id="kpi4-value">1,171</div>
+        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 210h</div>
+        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 2.7h / learner</div>
       </div>
       <div class="kpi-card c-green">
         <div class="kpi-label" id="kpi5-label">Degreed Completions</div>
-        <div class="kpi-value" id="kpi5-value">90</div>
-        <div class="kpi-sub"   id="kpi5-sub">by 25 unique learners</div>
-        <div class="kpi-pill pill-green" id="kpi5-pill">↑ March 2026 surge</div>
+        <div class="kpi-value" id="kpi5-value">299</div>
+        <div class="kpi-sub"   id="kpi5-sub">by 65 unique learners</div>
+        <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
+      </div>
+      <div class="kpi-card c-navy">
+        <div class="kpi-label" id="kpi6-label">Power Learners (5+ Items)</div>
+        <div class="kpi-value" id="kpi6-value">16</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 65 Degreed completers</div>
+        <div class="kpi-pill pill-green" id="kpi6-pill">25% engagement depth</div>
       </div>
     </div>
 
@@ -525,7 +531,7 @@
         <div class="chart-head">
           <div>
             <div class="chart-title">Learner Funnel</div>
-            <div class="chart-sub">Enrolled → Active → Started → Completed → Certified · TQ platform · Jun 18, 2026 export</div>
+            <div class="chart-sub">Enrolled → Active → Started → Completed → Certified · TQ platform · Jun 23, 2026 export</div>
           </div>
           <span class="chart-tag tag-tq">TQ Platform</span>
         </div>
@@ -573,7 +579,7 @@
         <div class="chart-head">
           <div>
             <div class="chart-title">Degreed Content Types</div>
-            <div class="chart-sub">88 completions · March 2026</div>
+            <div class="chart-sub">Content type breakdown · prior export · cumulative totals in KPI tiles</div>
           </div>
           <span class="chart-tag tag-deg">Degreed</span>
         </div>
@@ -859,7 +865,7 @@
       <span class="phase-badge" style="background:var(--teal)">Degreed Insights</span>
       <div class="phase-titles">
         <div class="phase-title">Skills, Pathways &amp; Search</div>
-        <div class="phase-sub">Learner skill interactions, pathway completion activity, and platform search behaviour · source: Degreed exports Apr 20, 2026</div>
+        <div class="phase-sub">Learner skill interactions, pathway completion activity, and platform search behaviour · source: Degreed exports Jun 23, 2026</div>
       </div>
       <div class="phase-line"></div>
     </div>
@@ -971,25 +977,25 @@
         <tbody>
           <tr>
             <td><strong>TQ</strong> — Company Learners Export</td>
-            <td>CSV</td><td>436 learners</td><td>Jun 18, 2026</td>
+            <td>CSV</td><td>436 learners</td><td>Jun 23, 2026</td>
             <td>Enrollment KPIs, Activity Status</td>
             <td><span class="dot dot-live">Live</span></td>
           </tr>
           <tr>
             <td><strong>TQ</strong> — Roster Export</td>
-            <td>CSV</td><td>1,106 records · 171 learners</td><td>Jun 18, 2026</td>
+            <td>CSV</td><td>1,106 records · 171 learners</td><td>Jun 23, 2026</td>
             <td>Program charts, Hours, Completion, Status</td>
             <td><span class="dot dot-live">Live</span></td>
           </tr>
           <tr>
             <td><strong>Degreed</strong> — Completions Detailed by User</td>
-            <td>XLSX</td><td>90 completions · 25 learners</td><td>Jun 18, 2026</td>
+            <td>CSV</td><td>299 completions · 65 learners</td><td>Jun 23, 2026</td>
             <td>Content types, Providers, Verification</td>
             <td><span class="dot dot-live">Live</span></td>
           </tr>
           <tr>
             <td><strong>Degreed</strong> — Content Trends Added</td>
-            <td>XLSX</td><td>254 content items</td><td>Jun 18, 2026</td>
+            <td>XLSX</td><td>254 content items</td><td>Jun 23, 2026</td>
             <td>Content catalog (pending wiring)</td>
             <td><span class="dot dot-pend">Pending</span></td>
           </tr>
@@ -1019,7 +1025,7 @@
 </main>
 
 <footer class="footer">
-  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jun 18, 2026
+  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jun 23, 2026
 </footer>
 
 <script>
@@ -1031,7 +1037,7 @@
 // ============================================================
 const DATA = {
   meta: {
-    lastRefresh: '2026-06-18',
+    lastRefresh: '2026-06-23',
     programLaunch: '2025-09-01'
   },
 
@@ -1083,11 +1089,11 @@ const DATA = {
   },
 
   degreed: {
-    // Latest 30-day window — source: Degreed In-App exports, May 22 – Jun 17, 2026
-    totalCompletions: 90,
-    uniqueLearners: 25,
-    estimatedLearningMinutes: 1915,
-    estimatedLearningHours: 31.9,
+    // Cumulative all-time — source: Degreed In-App exports, Jun 23, 2026
+    totalCompletions: 299,
+    uniqueLearners: 65,
+    estimatedLearningMinutes: 12594,
+    estimatedLearningHours: 209.9,
     contentTypes: {
       'Article': 26, 'Video': 20, 'Course': 17,
       'Post': 14, 'Podcast': 10, 'Task': 2, 'Event': 1
@@ -1215,25 +1221,28 @@ function applyCustom() {
 // ── KPI tile data per platform ──────────────────────────────
 const KPI_DATA = {
   both: [
-    { label:'Total Enrolled',      value:'436',   sub:'TQ platform learners',           pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
-    { label:'Active (7-Day)',       value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
-    { label:'Program Completions',  value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
-    { label:'Total Learning Hours', value:'993',   sub:'TQ 961h + Degreed 32h',           pill:'Avg 2.3h / learner',       pillClass:'pill-green' },
-    { label:'Degreed Completions',  value:'90',    sub:'by 25 unique learners',           pill:'May 22–Jun 17 window',     pillClass:'pill-green' }
+    { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',           pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
+    { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
+    { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
+    { label:'Total Learning Hours',       value:'1,171', sub:'TQ 961h + Degreed 210h',          pill:'Avg 2.7h / learner',       pillClass:'pill-green' },
+    { label:'Degreed Completions',        value:'299',   sub:'by 65 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
+    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',        pill:'25% engagement depth',     pillClass:'pill-green' }
   ],
   tq: [
-    { label:'Total Enrolled',       value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
-    { label:'Active (7-Day)',        value:'4',     sub:'of 436 learners · 0.9%',          pill:'Low activation rate',      pillClass:'pill-warn'  },
-    { label:'Program Completions',   value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
-    { label:'Total Learning Hours',  value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
-    { label:'Avg Concept Completion',value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' }
+    { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
+    { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',          pill:'Low activation rate',      pillClass:'pill-warn'  },
+    { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
+    { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
+    { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
+    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',     pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Unique Learners',       value:'25',    sub:'Degreed unique learners',          pill:'May 22–Jun 17 window',      pillClass:'pill-green' },
-    { label:'Content Completions',   value:'90',    sub:'across all content types',         pill:'Courses, Articles, Videos', pillClass:'pill-green' },
-    { label:'Course Completions',    value:'17',    sub:'of 90 Degreed completions',        pill:'19% of all content',        pillClass:'pill-green' },
-    { label:'Total Learning Hours',  value:'32',    sub:'Degreed learning hours',           pill:'Avg 1.3h / learner',        pillClass:'pill-green' },
-    { label:'Verified Completions',  value:'16',    sub:'of 90 completions · 18%',          pill:'74 unverified remaining',   pillClass:'pill-warn'  }
+    { label:'Unique Learners',            value:'65',    sub:'Degreed active learners',          pill:'Cumulative all-time',       pillClass:'pill-green' },
+    { label:'Content Completions',        value:'299',   sub:'across all content types',         pill:'Courses, Articles, Videos', pillClass:'pill-green' },
+    { label:'Course Completions',         value:'17',    sub:'prior export · Apr 20',            pill:'Content type data pending', pillClass:'pill-warn'  },
+    { label:'Total Learning Hours',       value:'210',   sub:'Degreed learning hours',           pill:'Avg 3.2h / learner',        pillClass:'pill-green' },
+    { label:'Verified Completions',       value:'16',    sub:'prior export · Apr 20',            pill:'Verification data pending', pillClass:'pill-warn'  },
+    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',      pillClass:'pill-green' }
   ]
 };
 
@@ -1250,7 +1259,8 @@ function updateKPITiles(platform, pathway) {
       { label:'Content Completions',  value:String(s.completions),     sub:'pathway content completed',         pill:s.required + ' required items',   pillClass:'pill-green' },
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
-      { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  }
+      { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
+      { label:'Power Learners (5+ Items)', value:'16',             sub:'platform-wide · Degreed',           pill:'of 65 completers · 25%',         pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
@@ -1301,10 +1311,10 @@ function setPathway(p, btn) {
 }
 
 const SOURCE_DATES = {
-  tqLearner:  'Jun 18, 2026',
-  tqRoster:   'Jun 18, 2026',
-  tqBoth:     'Jun 18, 2026',
-  degreedComp:'Jun 18, 2026'
+  tqLearner:  'Jun 23, 2026',
+  tqRoster:   'Jun 23, 2026',
+  tqBoth:     'Jun 23, 2026',
+  degreedComp:'Jun 23, 2026'
 };
 
 function stampAllCards() {
