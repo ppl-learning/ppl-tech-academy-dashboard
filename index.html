@@ -518,7 +518,7 @@
         <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
       </div>
       <div class="kpi-card c-navy">
-        <div class="kpi-label" id="kpi6-label">Power Learners (5+ Items)</div>
+        <div class="kpi-label" id="kpi6-label">5+ Items Completed</div>
         <div class="kpi-value" id="kpi6-value">16</div>
         <div class="kpi-sub"   id="kpi6-sub">of 65 Degreed completers</div>
         <div class="kpi-pill pill-green" id="kpi6-pill">25% engagement depth</div>
@@ -1226,7 +1226,7 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'1,171', sub:'TQ 961h + Degreed 210h',          pill:'Avg 2.7h / learner',       pillClass:'pill-green' },
     { label:'Degreed Completions',        value:'299',   sub:'by 65 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
-    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',        pill:'25% engagement depth',     pillClass:'pill-green' }
+    { label:'5+ Items Completed',  value:'16',    sub:'of 65 Degreed completers',        pill:'25% engagement depth',     pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
@@ -1234,7 +1234,7 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
     { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
-    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',     pillClass:'pill-green' }
+    { label:'5+ Items Completed',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',     pillClass:'pill-green' }
   ],
   degreed: [
     { label:'Unique Learners',            value:'65',    sub:'Degreed active learners',          pill:'Cumulative all-time',       pillClass:'pill-green' },
@@ -1242,7 +1242,7 @@ const KPI_DATA = {
     { label:'Course Completions',         value:'17',    sub:'prior export · Apr 20',            pill:'Content type data pending', pillClass:'pill-warn'  },
     { label:'Total Learning Hours',       value:'210',   sub:'Degreed learning hours',           pill:'Avg 3.2h / learner',        pillClass:'pill-green' },
     { label:'Learning Goal Met',           value:'4%',    sub:'16 of 392 users completed 5+ items', pill:'OKR target achieved',       pillClass:'pill-green' },
-    { label:'Power Learners (5+ Items)',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',      pillClass:'pill-green' }
+    { label:'5+ Items Completed',  value:'16',    sub:'of 65 Degreed completers',         pill:'25% engagement depth',      pillClass:'pill-green' }
   ]
 };
 
@@ -1260,7 +1260,7 @@ function updateKPITiles(platform, pathway) {
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
       { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
-      { label:'Power Learners (5+ Items)', value:'16',             sub:'platform-wide · Degreed',           pill:'of 65 completers · 25%',         pillClass:'pill-green' }
+      { label:'5+ Items Completed', value:'16',             sub:'platform-wide · Degreed',           pill:'of 65 completers · 25%',         pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
