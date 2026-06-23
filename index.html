@@ -124,7 +124,7 @@
     .phase-line { flex: 1; height: 1px; background: var(--border); }
 
     /* KPI ROW */
-    .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 18px; }
+    .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 18px; }
     .kpi-card {
       min-width: 0;
       background: var(--card); border-radius: 10px; padding: 16px 18px;
@@ -516,6 +516,12 @@
         <div class="kpi-value" id="kpi5-value">299</div>
         <div class="kpi-sub"   id="kpi5-sub">by 65 unique learners</div>
         <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
+      </div>
+      <div class="kpi-card c-teal">
+        <div class="kpi-label" id="kpi6-label">Users Logged In</div>
+        <div class="kpi-value" id="kpi6-value">177</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 392 total Degreed users</div>
+        <div class="kpi-pill pill-green" id="kpi6-pill">Users who have logged into Degreed</div>
       </div>
     </div>
 
@@ -1219,21 +1225,24 @@ const KPI_DATA = {
     { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'1,171', sub:'TQ 961h + Degreed 210h',          pill:'Avg 2.7h / learner',       pillClass:'pill-green' },
-    { label:'Degreed Completions',        value:'299',   sub:'by 65 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' }
+    { label:'Degreed Completions',        value:'299',   sub:'by 65 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'177',   sub:'of 392 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
     { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',          pill:'Low activation rate',      pillClass:'pill-warn'  },
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
-    { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' }
+    { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'177',   sub:'of 392 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Unique Learners',            value:'65',    sub:'Degreed active learners',          pill:'Cumulative all-time',       pillClass:'pill-green' },
+    { label:'Completed Content',          value:'65',    sub:'of 177 users logged in',           pill:'Users who have completed 1 or more items', pillClass:'pill-green' },
     { label:'Content Completions',        value:'299',   sub:'across all content types',         pill:'Courses, Articles, Videos', pillClass:'pill-green' },
     { label:'Course Completions',         value:'17',    sub:'prior export · Apr 20',            pill:'Content type data pending', pillClass:'pill-warn'  },
     { label:'Total Learning Hours',       value:'210',   sub:'Degreed learning hours',           pill:'Avg 3.2h / learner',        pillClass:'pill-green' },
-    { label:'Learning Goal Met',           value:'4%',    sub:'16 of 392 users completed 5+ items', pill:'OKR target tracker',       pillClass:'pill-green' },
+    { label:'Learning Goal Met',          value:'4%',    sub:'16 of 392 users completed 5+ items', pill:'OKR target tracker',      pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'177',   sub:'of 392 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ]
 };
 
@@ -1250,7 +1259,8 @@ function updateKPITiles(platform, pathway) {
       { label:'Content Completions',  value:String(s.completions),     sub:'pathway content completed',         pill:s.required + ' required items',   pillClass:'pill-green' },
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
-      { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  }
+      { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
+      { label:'Users Logged In',      value:'177',                     sub:'of 392 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
