@@ -410,7 +410,7 @@
     </div>
   </div>
   <div class="header-meta">
-    <div>Data as of <strong>June 18, 2026</strong></div>
+    <div>Data as of <strong>July 10, 2026</strong></div>
     <div>Program launch: September 2025</div>
   </div>
 </header>
@@ -462,13 +462,13 @@
   <div class="vdiv"></div>
   <div class="filter-custom">
     <span>From</span>
-    <input type="month" id="startDate" value="2025-09" min="2025-09" max="2026-06" />
+    <input type="month" id="startDate" value="2025-09" min="2025-09" max="2026-07" />
     <span>To</span>
-    <input type="month" id="endDate" value="2026-06" min="2025-09" max="2026-06" />
+    <input type="month" id="endDate" value="2026-07" min="2025-09" max="2026-07" />
     <button class="apply-btn" onclick="applyCustom()">Apply</button>
   </div>
   <span class="filter-7d-note" id="filter7dNote"></span>
-  <div class="data-stamp">Refreshed Jun 23, 2026 &nbsp;·&nbsp; Reload to update</div>
+  <div class="data-stamp">Refreshed Jul 10, 2026 &nbsp;·&nbsp; Reload to update</div>
 </div>
 
 <!-- MAIN -->
@@ -507,20 +507,20 @@
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi4-label">Total Learning Hours</div>
-        <div class="kpi-value" id="kpi4-value">1,171</div>
-        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 210h</div>
-        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 2.7h / learner</div>
+        <div class="kpi-value" id="kpi4-value">1,489</div>
+        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 528h</div>
+        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 3.4h / learner</div>
       </div>
       <div class="kpi-card c-green">
         <div class="kpi-label" id="kpi5-label">Degreed Completions</div>
-        <div class="kpi-value" id="kpi5-value">299</div>
-        <div class="kpi-sub"   id="kpi5-sub">by 65 unique learners</div>
+        <div class="kpi-value" id="kpi5-value">672</div>
+        <div class="kpi-sub"   id="kpi5-sub">by 132 unique learners</div>
         <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi6-label">Users Logged In</div>
-        <div class="kpi-value" id="kpi6-value">177</div>
-        <div class="kpi-sub"   id="kpi6-sub">of 177 total Degreed users</div>
+        <div class="kpi-value" id="kpi6-value">266</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 427 total Degreed users</div>
         <div class="kpi-pill pill-green" id="kpi6-pill">Users who have logged into Degreed</div>
       </div>
     </div>
@@ -1025,7 +1025,7 @@
 </main>
 
 <footer class="footer">
-  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jun 23, 2026
+  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jul 10, 2026
 </footer>
 
 <script>
@@ -1037,7 +1037,7 @@
 // ============================================================
 const DATA = {
   meta: {
-    lastRefresh: '2026-06-23',
+    lastRefresh: '2026-07-10',
     programLaunch: '2025-09-01'
   },
 
@@ -1089,41 +1089,69 @@ const DATA = {
   },
 
   degreed: {
-    // Cumulative all-time — source: Degreed In-App exports, Jun 23, 2026
-    totalCompletions: 299,
-    uniqueLearners: 65,
-    estimatedLearningMinutes: 12594,
-    estimatedLearningHours: 209.9,
+    // Cumulative all-time — source: Degreed In-App exports, Jul 10, 2026
+    totalCompletions: 672,
+    uniqueLearners: 132,
+    estimatedLearningMinutes: 31702,
+    estimatedLearningHours: 528.4,
     contentTypes: {
-      'Article': 26, 'Video': 20, 'Course': 17,
-      'Post': 14, 'Podcast': 10, 'Task': 2, 'Event': 1
+      'Course': 301, 'Event': 139, 'Article': 97,
+      'Video': 57, 'Post': 52, 'Podcast': 19, 'Task': 7
     },
     contentProviders: {
-      'Degreed Open Library': 71, 'Pluralsight': 15, 'Other': 4
+      'Pluralsight': 287, 'Degreed Open Library': 212, 'Events / Internal': 163, 'Microsoft Learn': 7, 'Other': 3
     },
-    verificationStatus: { 'Verified': 16, 'Unverified': 74 },
-    completionsByMonth: { '2026-05': 4, '2026-06': 86 },
+    verificationStatus: { 'Verified': 420, 'Unverified': 252 },
+    completionsByMonth: { '2026-02': 1, '2026-03': 88, '2026-04': 49, '2026-05': 12, '2026-06': 434, '2026-07': 88 },
 
-    // Pathway filter data — source: PPL Pathway (Detailed by User) 04/20
+    // Pathway filter data — source: PPL Pathway (Detailed by User) Jul 10, 2026
     pathwayLearners: {
-      'AI Solutions':                                            ['RWPierfy@pplweb.com','ATCronin@pplweb.com','DHKirschman@pplweb.com','JDBurdett@pplweb.com','ELDo@pplweb.com','TDDierksheide@pplweb.com','PLIsgrigg@pplweb.com','RPeesa@pplweb.com'],
-      'Agile & SAFe Fundamentals':                              ['JDvalori@pplweb.com','HVDang@pplweb.com','JGrumbein@pplweb.com'],
-      'Lean Delivery':                                          ['JDvalori@pplweb.com'],
-      'Enterprise Data & AI-ML Strategy':                       ['RPeesa@pplweb.com'],
-      'Technology Architecture':                                ['JWVermillion@pplweb.com'],
+      'AI Solutions':                                            ['ABarrantes@pplweb.com','AGulzar@pplweb.com','AMiller2@pplweb.com','ANeace@pplweb.com','ATCronin@pplweb.com','CAHiner@pplweb.com','CJHuffstutler@pplweb.com','CMcDowell@pplweb.com','CMLammers@pplweb.com','CStefan@pplweb.com','DHKirschman@pplweb.com','DMMellen@pplweb.com','DMYunez@pplweb.com','ELDo@pplweb.com','ERScheetz@pplweb.com','EZhuo@pplweb.com','GSnyder@pplweb.com','jafinck@pplweb.com','JBorrero@pplweb.com','JCernera@pplweb.com','JDBurdett@pplweb.com','JDvalori@pplweb.com','KUnderwood@pplweb.com','MIedupuganti@pplweb.com','MRReisinger@pplweb.com','PLIsgrigg@pplweb.com','RJDimario@pplweb.com','RPeesa@pplweb.com','RWPierfy@pplweb.com','SGTaylor@pplweb.com','TAlexander@pplweb.com','TDDierksheide@pplweb.com','WRMiller@pplweb.com'],
+      'AI Essentials: Understand Artificial Intelligence at Work': ['AKSingh1@pplweb.com','apearson@pplweb.com','BYColdiron@pplweb.com','CJSmith1@pplweb.com','CMcDowell@pplweb.com','EJohnson1@pplweb.com','ETJones@pplweb.com','FKhatri@pplweb.com','GSnyder@pplweb.com','HLeng@pplweb.com','jafinck@pplweb.com','JDvalori@pplweb.com','STMantz@pplweb.com','WShirer@pplweb.com'],
+      'Design Thinking':                                         ['clbush@pplweb.com','HKonynenbelt@pplweb.com','JChacko@pplweb.com','MAWatt@pplweb.com','MGEngle@pplweb.com'],
+      'Agile / SAFe Fundamentals':                              ['CTJones@pplweb.com','HVDang@pplweb.com','JDvalori@pplweb.com','JGrumbein@pplweb.com'],
+      'Security Engineering':                                    ['ELDo@pplweb.com','JWanamaker@pplweb.com','KUnderwood@pplweb.com'],
+      'Technology Architecture':                                 ['JWVermillion@pplweb.com','kmsherry@pplweb.com','LHKeim@pplweb.com'],
+      'Data Management':                                         ['AChan@pplweb.com','JBorrero@pplweb.com','RPeesa@pplweb.com'],
+      'Analytics & Insights':                                    ['GSnyder@pplweb.com','KNTheophile@pplweb.com'],
+      'Data Storytelling':                                       ['creitenauer@pplweb.com','JChacko@pplweb.com'],
+      'Data Modeling':                                           ['JChacko@pplweb.com','PBandyopadhyay@pplweb.com'],
+      'Enterprise Data & AI / ML Strategy':                     ['RPeesa@pplweb.com'],
+      'Lean Delivery':                                           ['JDvalori@pplweb.com'],
+      'AI Basics':                                               ['TDCoenen@pplweb.com'],
       'Data & Information Architecture':                        ['TKunkle@pplweb.com'],
-      'Data Management':                                        ['RPeesa@pplweb.com'],
-      'Security Engineering':                                   ['ELDo@pplweb.com']
+      'Design Learning: Create Flexible Experiences':           ['apearson@pplweb.com'],
+      'Boost Productivity: Unleash Cutting-Edge AI':            ['apearson@pplweb.com'],
+      'Adapt to New Media Platforms: Expand Your Reach':        ['MAWatt@pplweb.com'],
+      'Design Software Architecture: Build Scalable Systems':   ['JThompson@pplweb.com'],
+      'Tell Impactful Stories: Get Started With Business Storytelling': ['TLHeberling@pplweb.com'],
+      'Business Solutions Strategy':                            ['AMiller2@pplweb.com'],
+      'Data & AI Governance':                                    ['RPeesa@pplweb.com'],
+      'Kubernetes Basics':                                       ['CCStofko@pplweb.com']
     },
     pathwayStats: {
-      'AI Solutions':                                            { learners:8,  completions:21, hours:14.8, required:21 },
-      'Agile & SAFe Fundamentals':                              { learners:3,  completions:13, hours:15.8, required:13 },
-      'Lean Delivery':                                          { learners:1,  completions:2,  hours:3.5,  required:2  },
-      'Enterprise Data & AI-ML Strategy':                       { learners:1,  completions:1,  hours:0.3,  required:1  },
-      'Technology Architecture':                                { learners:1,  completions:1,  hours:2.4,  required:1  },
-      'Data & Information Architecture':                        { learners:1,  completions:1,  hours:0.8,  required:1  },
-      'Data Management':                                        { learners:1,  completions:1,  hours:0.3,  required:1  },
-      'Security Engineering':                                   { learners:1,  completions:1,  hours:1.4,  required:1  }
+      'AI Solutions':                                            { learners:33, completions:100, hours:93.7, required:100 },
+      'AI Essentials: Understand Artificial Intelligence at Work': { learners:14, completions:159, hours:13.0, required:91  },
+      'Design Thinking':                                         { learners:5,  completions:23,  hours:15.4, required:23  },
+      'Agile / SAFe Fundamentals':                              { learners:4,  completions:20,  hours:23.5, required:20  },
+      'Data Storytelling':                                       { learners:2,  completions:12,  hours:12.2, required:12  },
+      'Security Engineering':                                    { learners:3,  completions:10,  hours:12.4, required:10  },
+      'Analytics & Insights':                                    { learners:2,  completions:10,  hours:8.9,  required:10  },
+      'Data Management':                                         { learners:3,  completions:9,   hours:5.8,  required:9   },
+      'Data Modeling':                                           { learners:2,  completions:8,   hours:7.4,  required:8   },
+      'AI Basics':                                               { learners:1,  completions:8,   hours:3.9,  required:8   },
+      'Adapt to New Media Platforms: Expand Your Reach':         { learners:1,  completions:7,   hours:0.7,  required:7   },
+      'Technology Architecture':                                 { learners:3,  completions:5,   hours:7.2,  required:5   },
+      'Design Learning: Create Flexible Experiences':            { learners:1,  completions:4,   hours:0.2,  required:2   },
+      'Enterprise Data & AI / ML Strategy':                      { learners:1,  completions:3,   hours:2.0,  required:3   },
+      'Lean Delivery':                                           { learners:1,  completions:3,   hours:4.7,  required:3   },
+      'Design Software Architecture: Build Scalable Systems':    { learners:1,  completions:3,   hours:0.2,  required:3   },
+      'Tell Impactful Stories: Get Started With Business Storytelling': { learners:1, completions:3, hours:0.1, required:3 },
+      'Business Solutions Strategy':                             { learners:1,  completions:2,   hours:2.7,  required:2   },
+      'Data & AI Governance':                                    { learners:1,  completions:1,   hours:0.4,  required:1   },
+      'Data & Information Architecture':                         { learners:1,  completions:1,   hours:0.8,  required:1   },
+      'Kubernetes Basics':                                       { learners:1,  completions:1,   hours:0.1,  required:1   },
+      'Boost Productivity: Unleash Cutting-Edge AI':             { learners:1,  completions:1,   hours:0.1,  required:1   }
     },
 
     // Skills — source: PPL Skills (Detailed by User) 04/20
@@ -1188,17 +1216,17 @@ const DATA = {
 // ============================================================
 //  FILTER STATE
 // ============================================================
-let filter = { start: '2025-09', end: '2026-06' };
+let filter = { start: '2025-09', end: '2026-07' };
 
 function setPreset(preset, el) {
   document.querySelectorAll('#filterBar .preset-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  if (preset === 'all')  { filter.start = '2025-09'; filter.end = '2026-06'; }
-  else if (preset === '7d')  { filter.start = '2026-06'; filter.end = '2026-06'; }
-  else if (preset === '30d') { filter.start = '2026-06'; filter.end = '2026-06'; }
-  else if (preset === '90d') { filter.start = '2026-04'; filter.end = '2026-06'; }
-  else if (preset === '6m')  { filter.start = '2026-01'; filter.end = '2026-06'; }
-  else if (preset === 'ytd') { filter.start = '2026-01'; filter.end = '2026-06'; }
+  if (preset === 'all')  { filter.start = '2025-09'; filter.end = '2026-07'; }
+  else if (preset === '7d')  { filter.start = '2026-07'; filter.end = '2026-07'; }
+  else if (preset === '30d') { filter.start = '2026-06'; filter.end = '2026-07'; }
+  else if (preset === '90d') { filter.start = '2026-04'; filter.end = '2026-07'; }
+  else if (preset === '6m')  { filter.start = '2026-02'; filter.end = '2026-07'; }
+  else if (preset === 'ytd') { filter.start = '2026-01'; filter.end = '2026-07'; }
   document.getElementById('startDate').value = filter.start;
   document.getElementById('endDate').value = filter.end;
   // Trend data is monthly; a true 7-day slice isn't available, so note the approximation.
@@ -1224,9 +1252,9 @@ const KPI_DATA = {
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',           pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
     { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'1,171', sub:'TQ 961h + Degreed 210h',          pill:'Avg 2.7h / learner',       pillClass:'pill-green' },
-    { label:'Degreed Completions',        value:'299',   sub:'by 65 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'177',   sub:'of 177 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Total Learning Hours',       value:'1,489', sub:'TQ 961h + Degreed 528h',          pill:'Avg 3.4h / learner',       pillClass:'pill-green' },
+    { label:'Degreed Completions',        value:'672',   sub:'by 132 unique learners',          pill:'Cumulative all-time',      pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',      pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
@@ -1234,15 +1262,15 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
     { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'177',   sub:'of 177 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Users Logged In',            value:'177',   sub:'of 177 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
-    { label:'Completed Content',          value:'65',    sub:'of 177 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
-    { label:'Content Completions',        value:'299',   sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
-    { label:'Course Completions',         value:'17',    sub:'prior export · Apr 20',            pill:'Content type data pending',                 pillClass:'pill-warn'  },
-    { label:'Total Learning Hours',       value:'210',   sub:'Degreed learning hours',           pill:'Avg 3.2h / learner',                        pillClass:'pill-green' },
-    { label:'Learning Goal Met',          value:'4%',    sub:'16 of 391 licensed users completed 5+ items', pill:'OKR target tracker',             pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
+    { label:'Completed Content',          value:'132',   sub:'of 266 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
+    { label:'Content Completions',        value:'672',   sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
+    { label:'Course Completions',         value:'301',   sub:'course-type content',              pill:'Jul 10, 2026 export',                       pillClass:'pill-green' },
+    { label:'Total Learning Hours',       value:'528',   sub:'Degreed learning hours',           pill:'Avg 4.0h / learner',                        pillClass:'pill-green' },
+    { label:'Learning Goal Met',          value:'13%',   sub:'50 of 391 licensed users completed 5+ items', pill:'OKR target tracker',             pillClass:'pill-green' }
   ]
 };
 
@@ -1260,7 +1288,7 @@ function updateKPITiles(platform, pathway) {
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
       { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
-      { label:'Users Logged In',      value:'177',                     sub:'of 177 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+      { label:'Users Logged In',      value:'266',                     sub:'of 427 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
@@ -1314,7 +1342,7 @@ const SOURCE_DATES = {
   tqLearner:  'Jun 23, 2026',
   tqRoster:   'Jun 23, 2026',
   tqBoth:     'Jun 23, 2026',
-  degreedComp:'Jun 23, 2026'
+  degreedComp:'Jul 10, 2026'
 };
 
 function stampAllCards() {
@@ -1667,7 +1695,7 @@ function buildVerifiedChart() {
         ctx.save();
         ctx.font = 'bold 18px Segoe UI'; ctx.fillStyle = C.navy;
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText('33%', width/2, height/2 - 8);
+        ctx.fillText('63%', width/2, height/2 - 8);
         ctx.font = '10px Segoe UI'; ctx.fillStyle = '#6B7C93';
         ctx.fillText('Verified', width/2, height/2 + 10);
         ctx.restore();
