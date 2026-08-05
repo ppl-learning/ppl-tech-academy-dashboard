@@ -423,33 +423,6 @@
   <button class="preset-btn" onclick="setPlatform('both',this)">All Platforms</button>
 </div>
 
-<!-- PATHWAY FILTER -->
-<div class="pathway-bar" id="pathwayBar">
-  <label>Pathway:</label>
-  <button class="pathway-btn active" onclick="setPathway('all',this)">All Pathways</button>
-  <button class="pathway-btn" onclick="setPathway('Design Thinking',this)">Design Thinking</button>
-  <button class="pathway-btn" onclick="setPathway('Lean Delivery',this)">Lean Delivery</button>
-  <button class="pathway-btn" onclick="setPathway('Agile &amp; SAFe Fundamentals',this)">Agile &amp; SAFe</button>
-  <button class="pathway-btn" onclick="setPathway('Business Solutions Strategy',this)">Business Solutions</button>
-  <button class="pathway-btn" onclick="setPathway('Technology Strategy',this)">Technology Strategy</button>
-  <button class="pathway-btn" onclick="setPathway('Technology Architecture',this)">Tech Architecture</button>
-  <button class="pathway-btn" onclick="setPathway('Technology Operations',this)">Tech Operations</button>
-  <button class="pathway-btn" onclick="setPathway('Data Modeling',this)">Data Modeling</button>
-  <button class="pathway-btn" onclick="setPathway('Data &amp; Information Architecture',this)">Data Architecture</button>
-  <button class="pathway-btn" onclick="setPathway('Data Management',this)">Data Management</button>
-  <button class="pathway-btn" onclick="setPathway('Analytics &amp; Insights',this)">Analytics &amp; Insights</button>
-  <button class="pathway-btn" onclick="setPathway('Data Storytelling',this)">Data Storytelling</button>
-  <button class="pathway-btn" onclick="setPathway('AI Solutions',this)">AI Solutions</button>
-  <button class="pathway-btn" onclick="setPathway('Enterprise Data &amp; AI-ML Strategy',this)">Enterprise Data &amp; AI</button>
-  <button class="pathway-btn" onclick="setPathway('Data &amp; AI Governance',this)">Data &amp; AI Governance</button>
-  <button class="pathway-btn" onclick="setPathway('AI Enabled CI-CD &amp; Testing',this)">AI Enabled CI/CD</button>
-  <button class="pathway-btn" onclick="setPathway('Security Engineering',this)">Security Engineering</button>
-  <button class="pathway-btn" onclick="setPathway('Security Intelligence &amp; Operations',this)">Security Intelligence</button>
-  <button class="pathway-btn" onclick="setPathway('Security Compliance',this)">Security Compliance</button>
-  <button class="pathway-btn" onclick="setPathway('Governance &amp; Risk Management',this)">Governance &amp; Risk</button>
-  <span class="pathway-tq-note" id="pathwayTqNote"></span>
-</div>
-
 <!-- FILTER BAR -->
 <div class="filter-bar" id="filterBar">
   <span class="filter-label">Date Range</span>
@@ -611,8 +584,8 @@
       </div>
     </div>
 
-    <!-- ROW 4: concept completion + verification -->
-    <div class="chart-grid g2">
+    <!-- ROW 4: concept completion -->
+    <div class="chart-grid" style="grid-template-columns:1fr;">
       <div class="chart-card" data-platform="tq" data-src="tqRoster">
         <div class="chart-head">
           <div>
@@ -622,16 +595,6 @@
           <span class="chart-tag tag-tq">TQ Roster</span>
         </div>
         <div class="chart-wrap h200"><canvas id="conceptChart"></canvas></div>
-      </div>
-      <div class="chart-card" data-platform="degreed" data-src="degreedComp">
-        <div class="chart-head">
-          <div>
-            <div class="chart-title">Degreed Verification Status</div>
-            <div class="chart-sub">Verified vs unverified completions</div>
-          </div>
-          <span class="chart-tag tag-deg">Degreed</span>
-        </div>
-        <div class="chart-wrap h200"><canvas id="verifiedChart"></canvas></div>
       </div>
     </div>
   </section>
@@ -1266,11 +1229,9 @@ const KPI_DATA = {
   ],
   degreed: [
     { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
-    { label:'Completed Content',          value:'132',   sub:'of 266 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
     { label:'Content Completions',        value:'672',   sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
     { label:'Course Completions',         value:'301',   sub:'course-type content',              pill:'Jul 10, 2026 export',                       pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'528',   sub:'Degreed learning hours',           pill:'Avg 4.0h / learner',                        pillClass:'pill-green' },
-    { label:'Learning Goal Met',          value:'13%',   sub:'50 of 391 licensed users completed 5+ items', pill:'OKR target tracker',             pillClass:'pill-green' }
+    { label:'Total Learning Hours',       value:'528',   sub:'Degreed learning hours',           pill:'Avg 4.0h / learner',                        pillClass:'pill-green' }
   ]
 };
 
@@ -1293,8 +1254,11 @@ function updateKPITiles(platform, pathway) {
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
   }
+  const totalCards = 6;
   tiles.forEach((t, i) => {
     const n = i + 1;
+    const card = document.getElementById('kpi' + n + '-label').closest('.kpi-card');
+    card.style.display = '';
     document.getElementById('kpi' + n + '-label').textContent = t.label;
     document.getElementById('kpi' + n + '-value').textContent = t.value;
     document.getElementById('kpi' + n + '-sub').textContent   = t.sub;
@@ -1302,6 +1266,10 @@ function updateKPITiles(platform, pathway) {
     pill.textContent = t.pill;
     pill.className   = 'kpi-pill ' + t.pillClass;
   });
+  for (let i = tiles.length + 1; i <= totalCards; i++) {
+    const card = document.getElementById('kpi' + i + '-label').closest('.kpi-card');
+    card.style.display = 'none';
+  }
 }
 
 function applyCardVisibility(platform, pathway) {
