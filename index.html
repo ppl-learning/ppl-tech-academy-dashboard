@@ -468,7 +468,7 @@
     <button class="apply-btn" onclick="applyCustom()">Apply</button>
   </div>
   <span class="filter-7d-note" id="filter7dNote"></span>
-  <div class="data-stamp">Refreshed Jul 10, 2026 &nbsp;·&nbsp; Reload to update</div>
+  <div class="data-stamp">Refreshed August 19, 2026 &nbsp;·&nbsp; Reload to update</div>
 </div>
 
 <!-- MAIN -->
@@ -507,20 +507,20 @@
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi4-label">Total Learning Hours</div>
-        <div class="kpi-value" id="kpi4-value">1,489</div>
-        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 528h</div>
+        <div class="kpi-value" id="kpi4-value">2,454</div>
+        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 1,493h</div>
         <div class="kpi-pill pill-green" id="kpi4-pill">Avg 3.4h / learner</div>
       </div>
       <div class="kpi-card c-green">
         <div class="kpi-label" id="kpi5-label">Degreed Completions</div>
-        <div class="kpi-value" id="kpi5-value">672</div>
-        <div class="kpi-sub"   id="kpi5-sub">by 132 unique learners</div>
+        <div class="kpi-value" id="kpi5-value">1,466</div>
+        <div class="kpi-sub"   id="kpi5-sub">by 185 unique learners</div>
         <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi6-label">Users Logged In</div>
-        <div class="kpi-value" id="kpi6-value">266</div>
-        <div class="kpi-sub"   id="kpi6-sub">of 427 total Degreed users</div>
+        <div class="kpi-value" id="kpi6-value">317</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 475 total Degreed users</div>
         <div class="kpi-pill pill-green" id="kpi6-pill">Users who have logged into Degreed</div>
       </div>
     </div>
@@ -1025,7 +1025,7 @@
 </main>
 
 <footer class="footer">
-  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jul 10, 2026
+  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: August 19, 2026
 </footer>
 
 <script>
@@ -1089,22 +1089,21 @@ const DATA = {
   },
 
   degreed: {
-    // Cumulative all-time — source: Degreed In-App exports, Jul 10, 2026
-    totalCompletions: 672,
-    uniqueLearners: 132,
-    estimatedLearningMinutes: 31702,
-    estimatedLearningHours: 528.4,
+    // Cumulative all-time — source: Degreed In-App exports, Aug 19, 2026
+    totalCompletions: 1466,
+    uniqueLearners: 185,
+    estimatedLearningMinutes: 89587,
+    estimatedLearningHours: 1493.1,
     contentTypes: {
-      'Course': 301, 'Event': 139, 'Article': 97,
-      'Video': 57, 'Post': 52, 'Podcast': 19, 'Task': 7
+      'Course': 760, 'Article': 222, 'Post': 151, 'Event': 143, 'Video': 124, 'Podcast': 44, 'Task': 22
     },
     contentProviders: {
-      'Pluralsight': 287, 'Degreed Open Library': 212, 'Events / Internal': 163, 'Microsoft Learn': 7, 'Other': 3
+      'Pluralsight': 688, 'Degreed Open Library': 483, 'Coursera': 59, 'Microsoft Learn': 8, 'YouTube': 8, 'Internal / Other': 220
     },
     verificationStatus: { 'Verified': 420, 'Unverified': 252 },
     completionsByMonth: { '2026-02': 1, '2026-03': 88, '2026-04': 49, '2026-05': 12, '2026-06': 434, '2026-07': 88 },
 
-    // Pathway filter data — source: PPL Pathway (Detailed by User) Jul 10, 2026
+    // Pathway filter data — source: PPL Pathway (Detailed by User) Jul 10, 2026 (pathway data unchanged)
     pathwayLearners: {
       'AI Solutions':                                            ['ABarrantes@pplweb.com','AGulzar@pplweb.com','AMiller2@pplweb.com','ANeace@pplweb.com','ATCronin@pplweb.com','CAHiner@pplweb.com','CJHuffstutler@pplweb.com','CMcDowell@pplweb.com','CMLammers@pplweb.com','CStefan@pplweb.com','DHKirschman@pplweb.com','DMMellen@pplweb.com','DMYunez@pplweb.com','ELDo@pplweb.com','ERScheetz@pplweb.com','EZhuo@pplweb.com','GSnyder@pplweb.com','jafinck@pplweb.com','JBorrero@pplweb.com','JCernera@pplweb.com','JDBurdett@pplweb.com','JDvalori@pplweb.com','KUnderwood@pplweb.com','MIedupuganti@pplweb.com','MRReisinger@pplweb.com','PLIsgrigg@pplweb.com','RJDimario@pplweb.com','RPeesa@pplweb.com','RWPierfy@pplweb.com','SGTaylor@pplweb.com','TAlexander@pplweb.com','TDDierksheide@pplweb.com','WRMiller@pplweb.com'],
       'AI Essentials: Understand Artificial Intelligence at Work': ['AKSingh1@pplweb.com','apearson@pplweb.com','BYColdiron@pplweb.com','CJSmith1@pplweb.com','CMcDowell@pplweb.com','EJohnson1@pplweb.com','ETJones@pplweb.com','FKhatri@pplweb.com','GSnyder@pplweb.com','HLeng@pplweb.com','jafinck@pplweb.com','JDvalori@pplweb.com','STMantz@pplweb.com','WShirer@pplweb.com'],
@@ -1252,9 +1251,9 @@ const KPI_DATA = {
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',           pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
     { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'1,489', sub:'TQ 961h + Degreed 528h',          pill:'Avg 3.4h / learner',       pillClass:'pill-green' },
-    { label:'Degreed Completions',        value:'672',   sub:'by 132 unique learners',          pill:'Cumulative all-time',      pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',      pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Total Learning Hours',       value:'2,454', sub:'TQ 961h + Degreed 1,493h',        pill:'Avg 3.4h / learner',       pillClass:'pill-green' },
+    { label:'Degreed Completions',        value:'1,466', sub:'by 185 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
@@ -1262,15 +1261,15 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
     { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
-    { label:'Completed Content',          value:'132',   sub:'of 266 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
-    { label:'Content Completions',        value:'672',   sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
-    { label:'Course Completions',         value:'301',   sub:'course-type content',              pill:'Jul 10, 2026 export',                       pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'528',   sub:'Degreed learning hours',           pill:'Avg 4.0h / learner',                        pillClass:'pill-green' },
-    { label:'Learning Goal Met',          value:'13%',   sub:'50 of 391 licensed users completed 5+ items', pill:'OKR target tracker',             pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
+    { label:'Completed Content',          value:'185',   sub:'of 317 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
+    { label:'Content Completions',        value:'1,466', sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
+    { label:'Course Completions',         value:'760',   sub:'course-type content',              pill:'Aug 19, 2026 export',                       pillClass:'pill-green' },
+    { label:'Total Learning Hours',       value:'1,493', sub:'Degreed learning hours',           pill:'Avg 8.1h / learner',                        pillClass:'pill-green' },
+    { label:'Learning Goal Met',          value:'21%',   sub:'102 of 475 licensed users completed 5+ items', pill:'OKR target tracker',            pillClass:'pill-green' }
   ]
 };
 
@@ -1288,7 +1287,7 @@ function updateKPITiles(platform, pathway) {
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
       { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
-      { label:'Users Logged In',      value:'266',                     sub:'of 427 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+      { label:'Users Logged In',      value:'317',                     sub:'of 475 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
@@ -1342,7 +1341,7 @@ const SOURCE_DATES = {
   tqLearner:  'Jun 23, 2026',
   tqRoster:   'Jun 23, 2026',
   tqBoth:     'Jun 23, 2026',
-  degreedComp:'Jul 10, 2026'
+  degreedComp:'Aug 19, 2026'
 };
 
 function stampAllCards() {
