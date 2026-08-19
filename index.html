@@ -1495,26 +1495,24 @@ function setManager(name) {
     const liPct = m.team > 0 ? Math.round(m.loggedIn  / m.team * 100) : 0;
     const cPct  = m.team > 0 ? Math.round(m.completed / m.team * 100) : 0;
     const oPct  = m.team > 0 ? Math.round(m.okr5      / m.team * 100) : 0;
-    if (note) note.textContent = 'Filtering KPI tiles for ' + name + '’s team (' + m.team + ' members)';
+    if (note) note.textContent = ‘Filtering KPI tiles for ‘ + name + ‘’s team (‘ + m.team + ‘ members)’;
     const tiles = [
-      { label:’Team Members’,      value:String(m.team),      sub:’members on this manager’s team’,           pill:’Aug 19, 2026 export’,   pillClass:’pill-green’ },
-      { label:'Logged In',         value:String(m.loggedIn),  sub:'of ' + m.team + ' · ' + liPct + '% login rate', pill:'Degreed platform',  pillClass: liPct >= 50 ? 'pill-green' : 'pill-warn' },
-      { label:'Completed Content', value:String(m.completed), sub:'of ' + m.team + ' · ' + cPct + '% of team',   pill:'1+ items completed', pillClass: m.completed > 0 ? 'pill-green' : 'pill-warn' },
-      { label:'OKR 5+ Met',        value:String(m.okr5),      sub:'of ' + m.team + ' · ' + oPct + '% of team',   pill:'5+ content items',   pillClass: m.okr5 > 0 ? 'pill-green' : 'pill-warn' }
+      { label:’Team Members’,      value:String(m.team),      sub:’members on this manager’s team’,                pill:’Aug 19, 2026 export’,    pillClass:’pill-green’ },
+      { label:’Logged In’,         value:String(m.loggedIn),  sub:’of ‘ + m.team + ‘ · ‘ + liPct + ‘% login rate’, pill:’Degreed platform’,       pillClass: liPct >= 50 ? ‘pill-green’ : ‘pill-warn’ },
+      { label:’Completed Content’, value:String(m.completed), sub:’of ‘ + m.team + ‘ · ‘ + cPct + ‘% of team’,    pill:’1+ items completed’,     pillClass: m.completed > 0 ? ‘pill-green’ : ‘pill-warn’ },
+      { label:’OKR 5+ Met’,        value:String(m.okr5),      sub:’of ‘ + m.team + ‘ · ‘ + oPct + ‘% of team’,    pill:’5+ content items’,       pillClass: m.okr5 > 0 ? ‘pill-green’ : ‘pill-warn’ },
+      { label:’Login Rate’,        value:liPct + ‘%’,          sub:’of team logged into Degreed’,                        pill:m.loggedIn + ‘ of ‘ + m.team + ‘ users’, pillClass: liPct >= 50 ? ‘pill-green’ : ‘pill-warn’ },
+      { label:’Goal Achievement’,  value:oPct + ‘%’,           sub:’of team met OKR 5+ target’,                          pill:m.okr5 + ‘ of ‘ + m.team + ‘ users’,     pillClass: oPct >= 30 ? ‘pill-green’ : ‘pill-warn’ }
     ];
     tiles.forEach((t, i) => {
       const n = i + 1;
-      document.getElementById('kpi' + n + '-label').textContent = t.label;
-      document.getElementById('kpi' + n + '-value').textContent = t.value;
-      document.getElementById('kpi' + n + '-sub').textContent   = t.sub;
-      const pill = document.getElementById('kpi' + n + '-pill');
+      document.getElementById(‘kpi’ + n + ‘-label’).textContent = t.label;
+      document.getElementById(‘kpi’ + n + ‘-value’).textContent = t.value;
+      document.getElementById(‘kpi’ + n + ‘-sub’).textContent   = t.sub;
+      const pill = document.getElementById(‘kpi’ + n + ‘-pill’);
       pill.textContent = t.pill;
-      pill.className   = 'kpi-pill ' + t.pillClass;
+      pill.className   = ‘kpi-pill ‘ + t.pillClass;
     });
-    for (let i = 5; i <= 6; i++) {
-      const lbl = document.getElementById('kpi' + i + '-label');
-      if (lbl) { const c = lbl.closest('.kpi-card'); if (c) c.style.display = 'none'; }
-    }
   }
   document.querySelectorAll('#managerTableBody tr').forEach(tr => {
     tr.classList.toggle('mgr-selected', tr.dataset.manager === name);
