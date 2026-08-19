@@ -503,7 +503,7 @@
   <select class="manager-select" id="managerSelect" onchange="setManager(this.value)">
     <option value="all">All Managers</option>
   </select>
-  <span class="manager-note" id="managerNote">Showing program-wide metrics &nbsp;&middot;&nbsp; Aug 5, 2026 export &nbsp;&middot;&nbsp; 448 users</span>
+  <span class="manager-note" id="managerNote">Showing program-wide metrics &nbsp;&middot;&nbsp; Aug 19, 2026 export &nbsp;&middot;&nbsp; 475 users</span>
 </div>
 
 <!-- FILTER BAR -->
@@ -518,13 +518,13 @@
   <div class="vdiv"></div>
   <div class="filter-custom">
     <span>From</span>
-    <input type="month" id="startDate" value="2025-09" min="2025-09" max="2026-07" />
+    <input type="month" id="startDate" value="2025-09" min="2025-09" max="2026-08" />
     <span>To</span>
-    <input type="month" id="endDate" value="2026-07" min="2025-09" max="2026-07" />
+    <input type="month" id="endDate" value="2026-08" min="2025-09" max="2026-08" />
     <button class="apply-btn" onclick="applyCustom()">Apply</button>
   </div>
   <span class="filter-7d-note" id="filter7dNote"></span>
-  <div class="data-stamp">Refreshed Jul 10, 2026 &nbsp;·&nbsp; Reload to update</div>
+  <div class="data-stamp">Refreshed Aug 19, 2026 &nbsp;·&nbsp; Reload to update</div>
 </div>
 
 <!-- MAIN -->
@@ -563,20 +563,20 @@
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi4-label">Total Learning Hours</div>
-        <div class="kpi-value" id="kpi4-value">1,489</div>
-        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 528h</div>
-        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 3.4h / learner</div>
+        <div class="kpi-value" id="kpi4-value">2,454</div>
+        <div class="kpi-sub"   id="kpi4-sub">TQ 961h + Degreed 1,493h</div>
+        <div class="kpi-pill pill-green" id="kpi4-pill">Avg 5.6h / learner</div>
       </div>
       <div class="kpi-card c-green">
         <div class="kpi-label" id="kpi5-label">Degreed Completions</div>
-        <div class="kpi-value" id="kpi5-value">672</div>
-        <div class="kpi-sub"   id="kpi5-sub">by 132 unique learners</div>
+        <div class="kpi-value" id="kpi5-value">1,466</div>
+        <div class="kpi-sub"   id="kpi5-sub">by 185 unique learners</div>
         <div class="kpi-pill pill-green" id="kpi5-pill">Cumulative all-time</div>
       </div>
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi6-label">Users Logged In</div>
-        <div class="kpi-value" id="kpi6-value">266</div>
-        <div class="kpi-sub"   id="kpi6-sub">of 427 total Degreed users</div>
+        <div class="kpi-value" id="kpi6-value">317</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 475 total Degreed users</div>
         <div class="kpi-pill pill-green" id="kpi6-pill">Users who have logged into Degreed</div>
       </div>
     </div>
@@ -698,7 +698,7 @@
       <span class="phase-badge" style="background:var(--teal)">Manager View</span>
       <div class="phase-titles">
         <div class="phase-title">Team Engagement by Manager</div>
-        <div class="phase-sub">Degreed platform activity per reporting manager &middot; 64 managers with 3+ team members &middot; source: Aug 5, 2026 export &middot; click a row to filter KPI tiles</div>
+        <div class="phase-sub">Degreed platform activity per reporting manager &middot; 69 managers with 3+ team members &middot; source: Aug 19, 2026 export &middot; click a row to filter KPI tiles</div>
       </div>
       <div class="phase-line"></div>
     </div>
@@ -1080,7 +1080,7 @@
           </tr>
           <tr>
             <td><strong>Degreed</strong> — Completions Detailed by User</td>
-            <td>CSV</td><td>299 completions · 65 learners</td><td>Jun 23, 2026</td>
+            <td>XLSX</td><td>1,466 completions · 185 learners</td><td>Aug 19, 2026</td>
             <td>Content types, Providers, Verification</td>
             <td><span class="dot dot-live">Live</span></td>
           </tr>
@@ -1116,7 +1116,7 @@
 </main>
 
 <footer class="footer">
-  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Jul 10, 2026
+  PPL Tech Academy &nbsp;·&nbsp; Learning Dashboard &nbsp;·&nbsp; Built on TQ &amp; Degreed data &nbsp;·&nbsp; For internal use only &nbsp;·&nbsp; Last data refresh: Aug 19, 2026
 </footer>
 
 <script>
@@ -1128,7 +1128,7 @@
 // ============================================================
 const DATA = {
   meta: {
-    lastRefresh: '2026-07-10',
+    lastRefresh: '2026-08-19',
     programLaunch: '2025-09-01'
   },
 
@@ -1180,69 +1180,105 @@ const DATA = {
   },
 
   degreed: {
-    // Cumulative all-time — source: Degreed In-App exports, Jul 10, 2026
-    totalCompletions: 672,
-    uniqueLearners: 132,
-    estimatedLearningMinutes: 31702,
-    estimatedLearningHours: 528.4,
+    // Cumulative all-time — source: Degreed In-App exports, Aug 19, 2026
+    totalCompletions: 1466,
+    uniqueLearners: 185,
+    estimatedLearningMinutes: 89587,
+    estimatedLearningHours: 1493.1,
     contentTypes: {
-      'Course': 301, 'Event': 139, 'Article': 97,
-      'Video': 57, 'Post': 52, 'Podcast': 19, 'Task': 7
+      'Course': 760, 'Article': 222, 'Post': 151,
+      'Event': 143, 'Video': 124, 'Podcast': 44, 'Task': 22
     },
     contentProviders: {
-      'Pluralsight': 287, 'Degreed Open Library': 212, 'Events / Internal': 163, 'Microsoft Learn': 7, 'Other': 3
+      'Pluralsight': 688, 'Degreed Open Library': 483, 'Coursera': 59, 'Microsoft Learn': 8, 'YouTube': 8, 'Internal / Other': 220
     },
-    verificationStatus: { 'Verified': 420, 'Unverified': 252 },
-    completionsByMonth: { '2026-02': 1, '2026-03': 88, '2026-04': 49, '2026-05': 12, '2026-06': 434, '2026-07': 88 },
+    verificationStatus: { 'Verified': 878, 'Unverified': 588 },
+    completionsByMonth: { '2026-02': 1, '2026-03': 88, '2026-04': 49, '2026-05': 21, '2026-06': 438, '2026-07': 564, '2026-08': 305 },
 
-    // Pathway filter data — source: PPL Pathway (Detailed by User) Jul 10, 2026
+    // Pathway filter data — source: PPL Pathway (Detailed by User) Aug 19, 2026
     pathwayLearners: {
-      'AI Solutions':                                            ['ABarrantes@pplweb.com','AGulzar@pplweb.com','AMiller2@pplweb.com','ANeace@pplweb.com','ATCronin@pplweb.com','CAHiner@pplweb.com','CJHuffstutler@pplweb.com','CMcDowell@pplweb.com','CMLammers@pplweb.com','CStefan@pplweb.com','DHKirschman@pplweb.com','DMMellen@pplweb.com','DMYunez@pplweb.com','ELDo@pplweb.com','ERScheetz@pplweb.com','EZhuo@pplweb.com','GSnyder@pplweb.com','jafinck@pplweb.com','JBorrero@pplweb.com','JCernera@pplweb.com','JDBurdett@pplweb.com','JDvalori@pplweb.com','KUnderwood@pplweb.com','MIedupuganti@pplweb.com','MRReisinger@pplweb.com','PLIsgrigg@pplweb.com','RJDimario@pplweb.com','RPeesa@pplweb.com','RWPierfy@pplweb.com','SGTaylor@pplweb.com','TAlexander@pplweb.com','TDDierksheide@pplweb.com','WRMiller@pplweb.com'],
-      'AI Essentials: Understand Artificial Intelligence at Work': ['AKSingh1@pplweb.com','apearson@pplweb.com','BYColdiron@pplweb.com','CJSmith1@pplweb.com','CMcDowell@pplweb.com','EJohnson1@pplweb.com','ETJones@pplweb.com','FKhatri@pplweb.com','GSnyder@pplweb.com','HLeng@pplweb.com','jafinck@pplweb.com','JDvalori@pplweb.com','STMantz@pplweb.com','WShirer@pplweb.com'],
-      'Design Thinking':                                         ['clbush@pplweb.com','HKonynenbelt@pplweb.com','JChacko@pplweb.com','MAWatt@pplweb.com','MGEngle@pplweb.com'],
-      'Agile / SAFe Fundamentals':                              ['CTJones@pplweb.com','HVDang@pplweb.com','JDvalori@pplweb.com','JGrumbein@pplweb.com'],
-      'Security Engineering':                                    ['ELDo@pplweb.com','JWanamaker@pplweb.com','KUnderwood@pplweb.com'],
-      'Technology Architecture':                                 ['JWVermillion@pplweb.com','kmsherry@pplweb.com','LHKeim@pplweb.com'],
-      'Data Management':                                         ['AChan@pplweb.com','JBorrero@pplweb.com','RPeesa@pplweb.com'],
-      'Analytics & Insights':                                    ['GSnyder@pplweb.com','KNTheophile@pplweb.com'],
-      'Data Storytelling':                                       ['creitenauer@pplweb.com','JChacko@pplweb.com'],
-      'Data Modeling':                                           ['JChacko@pplweb.com','PBandyopadhyay@pplweb.com'],
-      'Enterprise Data & AI / ML Strategy':                     ['RPeesa@pplweb.com'],
-      'Lean Delivery':                                           ['JDvalori@pplweb.com'],
-      'AI Basics':                                               ['TDCoenen@pplweb.com'],
-      'Data & Information Architecture':                        ['TKunkle@pplweb.com'],
-      'Design Learning: Create Flexible Experiences':           ['apearson@pplweb.com'],
-      'Boost Productivity: Unleash Cutting-Edge AI':            ['apearson@pplweb.com'],
-      'Adapt to New Media Platforms: Expand Your Reach':        ['MAWatt@pplweb.com'],
-      'Design Software Architecture: Build Scalable Systems':   ['JThompson@pplweb.com'],
-      'Tell Impactful Stories: Get Started With Business Storytelling': ['TLHeberling@pplweb.com'],
-      'Business Solutions Strategy':                            ['AMiller2@pplweb.com'],
-      'Data & AI Governance':                                    ['RPeesa@pplweb.com'],
-      'Kubernetes Basics':                                       ['CCStofko@pplweb.com']
+      'AI Solutions':                                                          ['ABarrantes@pplweb.com','AGambrell@pplweb.com','AGulzar@pplweb.com','AMiller2@pplweb.com','AMRodriguez@pplweb.com','ANeace@pplweb.com','ASFogel@pplweb.com','ATCronin@pplweb.com','BYoung1@pplweb.com','CAHiner@pplweb.com','CjBushner@pplweb.com','CJHuffstutler@pplweb.com','CMcDowell@pplweb.com','CMLammers@pplweb.com','CStefan@pplweb.com','DHKirschman@pplweb.com','DMYunez@pplweb.com','DSMehrholz@pplweb.com','ELDo@pplweb.com','EPayne@pplweb.com','ERScheetz@pplweb.com','EZhuo@pplweb.com','FKhatri@pplweb.com','GSnyder@pplweb.com','HWBarber@pplweb.com','jafinck@pplweb.com','JAJex@pplweb.com','JBorrero@pplweb.com','JBuening@pplweb.com','JCernera@pplweb.com','JDBurdett@pplweb.com','JDvalori@pplweb.com','JFlower@pplweb.com','JGrumbein@pplweb.com','JLMorrison@pplweb.com','KAKaplan@pplweb.com','KUnderwood@pplweb.com','LPeters@pplweb.com','MAWatt@pplweb.com','MEckard@pplweb.com','MIedupuganti@pplweb.com','MRReisinger@pplweb.com','PLIsgrigg@pplweb.com','RJDimario@pplweb.com','RLMullins@pplweb.com','RPeesa@pplweb.com','RWascherle@pplweb.com','RWPierfy@pplweb.com','SGTaylor@pplweb.com','SLAdams@pplweb.com','SSullere@pplweb.com','TAlexander@pplweb.com','TDDierksheide@pplweb.com','TLaCava@pplweb.com','TRFarnand@pplweb.com','trreese@pplweb.com','WRMiller@pplweb.com','WShirer@pplweb.com'],
+      'AI Essentials: Understand Artificial Intelligence at Work':             ['AKSingh1@pplweb.com','AMalhotra@pplweb.com','apearson@pplweb.com','BYColdiron@pplweb.com','CJSmith1@pplweb.com','CMcDowell@pplweb.com','EJohnson1@pplweb.com','ETJones@pplweb.com','FKhatri@pplweb.com','GSnyder@pplweb.com','HLeng@pplweb.com','jafinck@pplweb.com','JDvalori@pplweb.com','JRockwell@pplweb.com','lariggs@pplweb.com','MGEngle@pplweb.com','RPeiffer@pplweb.com','STMantz@pplweb.com','WShirer@pplweb.com'],
+      'Design Thinking':                                                       ['CJSchucker@pplweb.com','clbush@pplweb.com','CNAnderson@pplweb.com','HKonynenbelt@pplweb.com','JChacko@pplweb.com','MAWatt@pplweb.com','MERubio@pplweb.com','MGEngle@pplweb.com','RPeiffer@pplweb.com'],
+      'Data Management':                                                       ['AChan@pplweb.com','JBorrero@pplweb.com','KWRohrer@pplweb.com','MERubio@pplweb.com','RPeesa@pplweb.com','TLaCava@pplweb.com'],
+      'Technology Operations':                                                 ['DCKenner@pplweb.com','JDBurdett@pplweb.com','JMiller1@pplweb.com','JSWhitehouse@pplweb.com','MMAgengo@pplweb.com','SELavin@pplweb.com'],
+      'Agile / SAFe Fundamentals':                                             ['CTJones@pplweb.com','HVDang@pplweb.com','JDvalori@pplweb.com','JGrumbein@pplweb.com','NVLeBlanc@pplweb.com','SHamilton@pplweb.com'],
+      'Data & AI Governance':                                                  ['BMTauber@pplweb.com','ECChuss@pplweb.com','NBollinger@pplweb.com','RPeesa@pplweb.com','SMYeakel@pplweb.com'],
+      'Security Engineering':                                                  ['DCKenner@pplweb.com','ELDo@pplweb.com','JWanamaker@pplweb.com','KUnderwood@pplweb.com','SGTaylor@pplweb.com'],
+      'Kubernetes Basics':                                                     ['AGollamudi@pplweb.com','CCStofko@pplweb.com','JJMorehouse@pplweb.com','LRobinson@pplweb.com','WDuRoss@pplweb.com'],
+      'Enterprise Data & AI / ML Strategy':                                   ['JFlower@pplweb.com','NBollinger@pplweb.com','RPeesa@pplweb.com','TDJohnson2@pplweb.com','TLaCava@pplweb.com'],
+      'Optimize AI Performance: Perfect Prompt Engineering':                  ['CCStofko@pplweb.com','CMartuza@pplweb.com','CStefan@pplweb.com','RAPennington@pplweb.com'],
+      'Data Storytelling':                                                     ['creitenauer@pplweb.com','JChacko@pplweb.com','MAWatt@pplweb.com','MERubio@pplweb.com'],
+      'Analytics & Insights':                                                  ['GSnyder@pplweb.com','KNTheophile@pplweb.com','MERubio@pplweb.com'],
+      'Technology Architecture':                                               ['JWVermillion@pplweb.com','kmsherry@pplweb.com','LHKeim@pplweb.com'],
+      'Data Modeling':                                                         ['JChacko@pplweb.com','MERubio@pplweb.com','PBandyopadhyay@pplweb.com'],
+      'Data & Information Architecture':                                      ['TKunkle@pplweb.com','TLaCava@pplweb.com'],
+      'Security Intelligence & Operations':                                   ['DBHack@pplweb.com','JLopez@pplweb.com'],
+      'Technology Strategy':                                                   ['DMMellen@pplweb.com','DNexsen@pplweb.com'],
+      'Lean Delivery':                                                         ['CCStofko@pplweb.com','JDvalori@pplweb.com'],
+      'AI Enabled CI/CD & Testing':                                            ['JNWilson@pplweb.com','SSullere@pplweb.com'],
+      'Business Solutions Strategy':                                           ['AMiller2@pplweb.com','SCotton@pplweb.com'],
+      'Lead with Impact: Succeed in Leadership':                              ['RAPennington@pplweb.com','RLMullins@pplweb.com'],
+      'Time Management Unleashed: Unlock Productivity Hacks':                ['lariggs@pplweb.com','SELavin@pplweb.com'],
+      'Boost Productivity: Unleash Cutting-Edge AI':                         ['apearson@pplweb.com'],
+      'Redefine Leadership: Integrate AI and Innovation':                     ['CJSchucker@pplweb.com'],
+      'Governance & Risk Management':                                          ['TOWelsh@pplweb.com'],
+      'Design Learning: Create Flexible Experiences':                         ['apearson@pplweb.com'],
+      'Microsoft Copilot Training Series':                                    ['JRVieczorek@pplweb.com'],
+      'Explore Cloud Computing: Navigate AWS, Azure & Google Cloud':          ['CMJacques@pplweb.com'],
+      'Manage Projects: Master Essential Strategies':                         ['Zbaz@pplweb.com'],
+      'Develop a Growth Mindset: Foster a Learning Culture':                  ['TKunkle@pplweb.com'],
+      'Adapt to New Media Platforms: Expand Your Reach':                      ['MAWatt@pplweb.com'],
+      'Drive Change: Master Change Management Basics':                        ['RLMullins@pplweb.com'],
+      'Discover AI: How Artificial Intelligence Transforms Work':             ['RPeiffer@pplweb.com'],
+      'Copilot Basics':                                                        ['TDCoenen@pplweb.com'],
+      'Inspire High Performance: Motivate Your Teams':                        ['TLHeberling@pplweb.com'],
+      'Tell Impactful Stories: Get Started With Business Storytelling':       ['TLHeberling@pplweb.com'],
+      'Innovate with Design Thinking: Solve Business Challenges':             ['AMalhotra@pplweb.com'],
+      'Design Software Architecture: Build Scalable Systems':                 ['JThompson@pplweb.com'],
+      'Security Compliance':                                                   ['KMays@pplweb.com']
     },
     pathwayStats: {
-      'AI Solutions':                                            { learners:33, completions:100, hours:93.7, required:100 },
-      'AI Essentials: Understand Artificial Intelligence at Work': { learners:14, completions:159, hours:13.0, required:91  },
-      'Design Thinking':                                         { learners:5,  completions:23,  hours:15.4, required:23  },
-      'Agile / SAFe Fundamentals':                              { learners:4,  completions:20,  hours:23.5, required:20  },
-      'Data Storytelling':                                       { learners:2,  completions:12,  hours:12.2, required:12  },
-      'Security Engineering':                                    { learners:3,  completions:10,  hours:12.4, required:10  },
-      'Analytics & Insights':                                    { learners:2,  completions:10,  hours:8.9,  required:10  },
-      'Data Management':                                         { learners:3,  completions:9,   hours:5.8,  required:9   },
-      'Data Modeling':                                           { learners:2,  completions:8,   hours:7.4,  required:8   },
-      'AI Basics':                                               { learners:1,  completions:8,   hours:3.9,  required:8   },
-      'Adapt to New Media Platforms: Expand Your Reach':         { learners:1,  completions:7,   hours:0.7,  required:7   },
-      'Technology Architecture':                                 { learners:3,  completions:5,   hours:7.2,  required:5   },
-      'Design Learning: Create Flexible Experiences':            { learners:1,  completions:4,   hours:0.2,  required:2   },
-      'Enterprise Data & AI / ML Strategy':                      { learners:1,  completions:3,   hours:2.0,  required:3   },
-      'Lean Delivery':                                           { learners:1,  completions:3,   hours:4.7,  required:3   },
-      'Design Software Architecture: Build Scalable Systems':    { learners:1,  completions:3,   hours:0.2,  required:3   },
-      'Tell Impactful Stories: Get Started With Business Storytelling': { learners:1, completions:3, hours:0.1, required:3 },
-      'Business Solutions Strategy':                             { learners:1,  completions:2,   hours:2.7,  required:2   },
-      'Data & AI Governance':                                    { learners:1,  completions:1,   hours:0.4,  required:1   },
-      'Data & Information Architecture':                         { learners:1,  completions:1,   hours:0.8,  required:1   },
-      'Kubernetes Basics':                                       { learners:1,  completions:1,   hours:0.1,  required:1   },
-      'Boost Productivity: Unleash Cutting-Edge AI':             { learners:1,  completions:1,   hours:0.1,  required:1   }
+      'AI Solutions':                                                         { learners:58, completions:212, hours:252.7, required:212 },
+      'AI Essentials: Understand Artificial Intelligence at Work':            { learners:19, completions:239, hours:19.9,  required:142 },
+      'Design Thinking':                                                      { learners:9,  completions:49,  hours:34.5,  required:49  },
+      'Agile / SAFe Fundamentals':                                            { learners:6,  completions:30,  hours:34.1,  required:30  },
+      'Technology Operations':                                                { learners:6,  completions:26,  hours:18.2,  required:26  },
+      'Data Management':                                                      { learners:6,  completions:28,  hours:20.7,  required:28  },
+      'Security Engineering':                                                 { learners:5,  completions:18,  hours:22.1,  required:18  },
+      'Data & AI Governance':                                                 { learners:5,  completions:15,  hours:16.3,  required:15  },
+      'Kubernetes Basics':                                                    { learners:5,  completions:5,   hours:0.5,   required:5   },
+      'Enterprise Data & AI / ML Strategy':                                  { learners:5,  completions:8,   hours:4.4,   required:8   },
+      'Optimize AI Performance: Perfect Prompt Engineering':                 { learners:4,  completions:30,  hours:3.4,   required:12  },
+      'Data Storytelling':                                                    { learners:4,  completions:26,  hours:27.7,  required:26  },
+      'Analytics & Insights':                                                 { learners:3,  completions:19,  hours:17.2,  required:19  },
+      'Technology Architecture':                                              { learners:3,  completions:9,   hours:15.0,  required:9   },
+      'Data Modeling':                                                        { learners:3,  completions:18,  hours:17.0,  required:18  },
+      'Security Intelligence & Operations':                                  { learners:2,  completions:14,  hours:18.5,  required:14  },
+      'Lead with Impact: Succeed in Leadership':                             { learners:2,  completions:31,  hours:3.0,   required:20  },
+      'Lean Delivery':                                                        { learners:2,  completions:9,   hours:13.1,  required:9   },
+      'AI Enabled CI/CD & Testing':                                           { learners:2,  completions:16,  hours:16.7,  required:16  },
+      'Business Solutions Strategy':                                          { learners:2,  completions:8,   hours:9.5,   required:8   },
+      'Technology Strategy':                                                  { learners:2,  completions:3,   hours:3.8,   required:3   },
+      'Time Management Unleashed: Unlock Productivity Hacks':               { learners:2,  completions:19,  hours:2.1,   required:13  },
+      'Data & Information Architecture':                                     { learners:2,  completions:2,   hours:2.5,   required:2   },
+      'Adapt to New Media Platforms: Expand Your Reach':                     { learners:1,  completions:7,   hours:0.7,   required:7   },
+      'Tell Impactful Stories: Get Started With Business Storytelling':      { learners:1,  completions:16,  hours:1.4,   required:12  },
+      'Security Compliance':                                                  { learners:1,  completions:5,   hours:8.2,   required:5   },
+      'Boost Productivity: Unleash Cutting-Edge AI':                        { learners:1,  completions:1,   hours:0.1,   required:1   },
+      'Drive Change: Master Change Management Basics':                       { learners:1,  completions:17,  hours:1.4,   required:11  },
+      'Design Learning: Create Flexible Experiences':                        { learners:1,  completions:4,   hours:0.2,   required:2   },
+      'Microsoft Copilot Training Series':                                   { learners:1,  completions:12,  hours:12.0,  required:12  },
+      'Explore Cloud Computing: Navigate AWS, Azure & Google Cloud':         { learners:1,  completions:7,   hours:0.6,   required:4   },
+      'Design Software Architecture: Build Scalable Systems':                { learners:1,  completions:3,   hours:0.2,   required:3   },
+      'Redefine Leadership: Integrate AI and Innovation':                    { learners:1,  completions:9,   hours:1.3,   required:7   },
+      'Innovate with Design Thinking: Solve Business Challenges':            { learners:1,  completions:11,  hours:1.1,   required:7   },
+      'Manage Projects: Master Essential Strategies':                        { learners:1,  completions:3,   hours:0.1,   required:1   },
+      'Develop a Growth Mindset: Foster a Learning Culture':                 { learners:1,  completions:11,  hours:0.8,   required:9   },
+      'Governance & Risk Management':                                         { learners:1,  completions:2,   hours:2.0,   required:2   },
+      'Discover AI: How Artificial Intelligence Transforms Work':            { learners:1,  completions:11,  hours:0.6,   required:10  },
+      'Copilot Basics':                                                       { learners:1,  completions:2,   hours:1.7,   required:2   },
+      'Inspire High Performance: Motivate Your Teams':                       { learners:1,  completions:6,   hours:0.5,   required:3   }
     },
 
     // Skills — source: PPL Skills (Detailed by User) 04/20
@@ -1307,17 +1343,17 @@ const DATA = {
 // ============================================================
 //  FILTER STATE
 // ============================================================
-let filter = { start: '2025-09', end: '2026-07' };
+let filter = { start: '2025-09', end: '2026-08' };
 
 function setPreset(preset, el) {
   document.querySelectorAll('#filterBar .preset-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  if (preset === 'all')  { filter.start = '2025-09'; filter.end = '2026-07'; }
-  else if (preset === '7d')  { filter.start = '2026-07'; filter.end = '2026-07'; }
-  else if (preset === '30d') { filter.start = '2026-06'; filter.end = '2026-07'; }
-  else if (preset === '90d') { filter.start = '2026-04'; filter.end = '2026-07'; }
-  else if (preset === '6m')  { filter.start = '2026-02'; filter.end = '2026-07'; }
-  else if (preset === 'ytd') { filter.start = '2026-01'; filter.end = '2026-07'; }
+  if (preset === 'all')  { filter.start = '2025-09'; filter.end = '2026-08'; }
+  else if (preset === '7d')  { filter.start = '2026-08'; filter.end = '2026-08'; }
+  else if (preset === '30d') { filter.start = '2026-07'; filter.end = '2026-08'; }
+  else if (preset === '90d') { filter.start = '2026-05'; filter.end = '2026-08'; }
+  else if (preset === '6m')  { filter.start = '2026-03'; filter.end = '2026-08'; }
+  else if (preset === 'ytd') { filter.start = '2026-01'; filter.end = '2026-08'; }
   document.getElementById('startDate').value = filter.start;
   document.getElementById('endDate').value = filter.end;
   // Trend data is monthly; a true 7-day slice isn't available, so note the approximation.
@@ -1343,9 +1379,9 @@ const KPI_DATA = {
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',           pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
     { label:'Active (7-Day)',             value:'4',     sub:'of 436 learners · 0.9%',         pill:'Low activation rate',      pillClass:'pill-warn'  },
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'1,489', sub:'TQ 961h + Degreed 528h',          pill:'Avg 3.4h / learner',       pillClass:'pill-green' },
-    { label:'Degreed Completions',        value:'672',   sub:'by 132 unique learners',          pill:'Cumulative all-time',      pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',      pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Total Learning Hours',       value:'2,454', sub:'TQ 961h + Degreed 1,493h',        pill:'Avg 5.6h / learner',       pillClass:'pill-green' },
+    { label:'Degreed Completions',        value:'1,466', sub:'by 185 unique learners',          pill:'Cumulative all-time',      pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',      pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
@@ -1353,85 +1389,89 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
     { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Users Logged In',            value:'266',   sub:'of 427 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
-    { label:'Completed Content',          value:'132',   sub:'of 266 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
-    { label:'Content Completions',        value:'672',   sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
-    { label:'Course Completions',         value:'301',   sub:'course-type content',              pill:'Jul 10, 2026 export',                       pillClass:'pill-green' },
-    { label:'Total Learning Hours',       value:'528',   sub:'Degreed learning hours',           pill:'Avg 4.0h / learner',                        pillClass:'pill-green' },
-    { label:'Learning Goal Met',          value:'13%',   sub:'50 of 391 licensed users completed 5+ items', pill:'OKR target tracker',             pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
+    { label:'Completed Content',          value:'185',   sub:'of 317 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
+    { label:'Content Completions',        value:'1,466', sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
+    { label:'Course Completions',         value:'760',   sub:'course-type content',              pill:'Aug 19, 2026 export',                       pillClass:'pill-green' },
+    { label:'Total Learning Hours',       value:'1,493', sub:'Degreed learning hours',           pill:'Avg 8.1h / learner',                        pillClass:'pill-green' },
+    { label:'Learning Goal Met',          value:'21%',   sub:'102 of 475 licensed users completed 5+ items', pill:'OKR target tracker',            pillClass:'pill-green' }
   ]
 };
 
-// ── Manager Breakdown Data (Aug 5, 2026 export · 64 managers with 3+ members)
+// ── Manager Breakdown Data (Aug 19, 2026 export · 69 managers with 3+ members)
 const MANAGER_DATA = {
-  'Amanda Miller':          { team:3,  loggedIn:3,  completed:3,  okr5:0 },
-  'Andrew Miller':          { team:5,  loggedIn:5,  completed:3,  okr5:1 },
-  'Andrew Schwartzberg':    { team:6,  loggedIn:3,  completed:0,  okr5:0 },
-  'Ann Seidler':            { team:3,  loggedIn:3,  completed:0,  okr5:0 },
-  'Ashley Vernon':          { team:4,  loggedIn:1,  completed:0,  okr5:0 },
-  'Ashutosh Dogra':         { team:5,  loggedIn:5,  completed:0,  okr5:0 },
-  'Atchuta Gollamudi':      { team:6,  loggedIn:4,  completed:3,  okr5:0 },
-  'Adam Gross':             { team:4,  loggedIn:3,  completed:2,  okr5:1 },
-  'Brandon Coldiron':       { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Brian Pellegrino':       { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Christopher Bush':       { team:4,  loggedIn:4,  completed:1,  okr5:0 },
-  'Christopher Martuza':    { team:3,  loggedIn:1,  completed:1,  okr5:1 },
-  'Christopher Smith':      { team:4,  loggedIn:4,  completed:3,  okr5:2 },
-  'Christine Stofko':       { team:4,  loggedIn:4,  completed:3,  okr5:1 },
-  'Colleen Lammers':        { team:6,  loggedIn:5,  completed:4,  okr5:1 },
-  'Daniel Johnson':         { team:6,  loggedIn:4,  completed:1,  okr5:1 },
-  'David McLeod':           { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'David Ray':              { team:6,  loggedIn:6,  completed:3,  okr5:2 },
-  'Dawn Yunez':             { team:3,  loggedIn:3,  completed:1,  okr5:1 },
-  'Dean Del Vecchio':       { team:7,  loggedIn:6,  completed:3,  okr5:2 },
-  'Derrick Russell':        { team:4,  loggedIn:4,  completed:3,  okr5:1 },
-  'Desiree McGuire':        { team:3,  loggedIn:3,  completed:2,  okr5:0 },
-  'Diane Mellen':           { team:7,  loggedIn:7,  completed:3,  okr5:1 },
-  'DollieJane Greenwell':   { team:5,  loggedIn:2,  completed:1,  okr5:0 },
-  'Elisa Vetrano':          { team:4,  loggedIn:3,  completed:3,  okr5:1 },
-  'Francis Punzo':          { team:6,  loggedIn:4,  completed:2,  okr5:1 },
-  'Glen Dorney':            { team:4,  loggedIn:0,  completed:0,  okr5:0 },
-  'Govindarajan Srinivasan':{ team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Gregory Belanger':       { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Gregory James':          { team:5,  loggedIn:5,  completed:3,  okr5:0 },
-  'Heidi Konynenbelt':      { team:5,  loggedIn:3,  completed:2,  okr5:1 },
-  'Jason Finn':             { team:3,  loggedIn:2,  completed:1,  okr5:0 },
-  'Jessica Cernera':        { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Joe Fulmer':             { team:3,  loggedIn:3,  completed:0,  okr5:0 },
-  'Jonathan Whitehouse':    { team:6,  loggedIn:6,  completed:1,  okr5:1 },
-  'Jordi Medina':           { team:9,  loggedIn:0,  completed:0,  okr5:0 },
-  'Josh Rockwell':          { team:6,  loggedIn:4,  completed:0,  okr5:0 },
-  'Joseph Hagerty':         { team:3,  loggedIn:1,  completed:1,  okr5:0 },
-  'Joseph Justice':         { team:3,  loggedIn:0,  completed:0,  okr5:0 },
-  'James Liero':            { team:5,  loggedIn:4,  completed:2,  okr5:0 },
-  'Katherine Hearns':       { team:3,  loggedIn:2,  completed:2,  okr5:1 },
-  'Lindsay Fegenbush':      { team:8,  loggedIn:8,  completed:4,  okr5:1 },
-  'Matthew Gray':           { team:10, loggedIn:4,  completed:2,  okr5:0 },
-  'Michael Basso':          { team:14, loggedIn:6,  completed:2,  okr5:2 },
-  'Michael Curry':          { team:3,  loggedIn:2,  completed:1,  okr5:0 },
-  'Monica Green':           { team:9,  loggedIn:9,  completed:6,  okr5:4 },
-  'Nicholas Ewer':          { team:3,  loggedIn:3,  completed:2,  okr5:1 },
-  'Nicholas Pidstawski':    { team:4,  loggedIn:3,  completed:1,  okr5:1 },
-  'Patricia Scaramuzzo':    { team:3,  loggedIn:1,  completed:0,  okr5:0 },
-  'Richard Lindop':         { team:3,  loggedIn:3,  completed:2,  okr5:0 },
-  'Richard Santillo':       { team:3,  loggedIn:3,  completed:2,  okr5:1 },
-  'Rommel Dumlao':          { team:3,  loggedIn:1,  completed:0,  okr5:0 },
-  'Royal Peiffer':          { team:6,  loggedIn:4,  completed:1,  okr5:1 },
-  'Ryan Gallagher':         { team:7,  loggedIn:5,  completed:2,  okr5:1 },
-  'Scott Shockley':         { team:3,  loggedIn:2,  completed:0,  okr5:0 },
-  'Srinivas Nanduri':       { team:8,  loggedIn:7,  completed:1,  okr5:0 },
-  'Steven Favorito':        { team:7,  loggedIn:5,  completed:0,  okr5:0 },
-  'Steven Ramirez':         { team:4,  loggedIn:4,  completed:1,  okr5:0 },
-  'Suzette Steele':         { team:3,  loggedIn:3,  completed:2,  okr5:1 },
-  'Thomas Johnson':         { team:5,  loggedIn:5,  completed:1,  okr5:1 },
-  'Thomas Pienta':          { team:3,  loggedIn:3,  completed:1,  okr5:0 },
-  'Todd Dierksheide':       { team:8,  loggedIn:6,  completed:3,  okr5:0 },
-  'Todd Farnand':           { team:4,  loggedIn:3,  completed:3,  okr5:2 },
-  'Tracy Heberling':        { team:5,  loggedIn:3,  completed:1,  okr5:1 },
-  'Brandon Coldiron':       { team:3,  loggedIn:3,  completed:1,  okr5:0 }
+  'Adam Gross':              { team:4,  loggedIn:3,  completed:2,  okr5:1 },
+  'Amanda Miller':           { team:3,  loggedIn:3,  completed:3,  okr5:2 },
+  'Andrew Miller':           { team:5,  loggedIn:5,  completed:4,  okr5:3 },
+  'Andrew Schwartzberg':     { team:6,  loggedIn:3,  completed:2,  okr5:1 },
+  'Ann Seidler':             { team:3,  loggedIn:3,  completed:2,  okr5:0 },
+  'Ashley Vernon':           { team:4,  loggedIn:1,  completed:0,  okr5:0 },
+  'Ashutosh Dogra':          { team:5,  loggedIn:5,  completed:0,  okr5:0 },
+  'Atchuta Gollamudi':       { team:6,  loggedIn:4,  completed:5,  okr5:1 },
+  'Brandon Coldiron':        { team:3,  loggedIn:3,  completed:1,  okr5:0 },
+  'Brian Pellegrino':        { team:3,  loggedIn:3,  completed:1,  okr5:0 },
+  'Christopher Bush':        { team:4,  loggedIn:4,  completed:3,  okr5:2 },
+  'Christopher Martuza':     { team:3,  loggedIn:1,  completed:1,  okr5:1 },
+  'Christopher Smith':       { team:4,  loggedIn:4,  completed:3,  okr5:3 },
+  'Christina Martin':        { team:4,  loggedIn:1,  completed:1,  okr5:0 },
+  'Christine Stofko':        { team:4,  loggedIn:4,  completed:3,  okr5:3 },
+  'Colleen Lammers':         { team:6,  loggedIn:5,  completed:4,  okr5:2 },
+  'Daniel Johnson':          { team:6,  loggedIn:4,  completed:2,  okr5:2 },
+  'David McLeod':            { team:3,  loggedIn:3,  completed:1,  okr5:0 },
+  'David Ray':               { team:6,  loggedIn:6,  completed:6,  okr5:3 },
+  'Dawn Yunez':              { team:3,  loggedIn:3,  completed:2,  okr5:1 },
+  'Dean Del Vecchio':        { team:7,  loggedIn:6,  completed:3,  okr5:2 },
+  'Dennis Urban':            { team:4,  loggedIn:0,  completed:0,  okr5:0 },
+  'Derrick Russell':         { team:4,  loggedIn:4,  completed:4,  okr5:2 },
+  'Desiree McGuire':         { team:3,  loggedIn:3,  completed:3,  okr5:2 },
+  'Diane Mellen':            { team:7,  loggedIn:7,  completed:5,  okr5:3 },
+  'DollieJane Greenwell':    { team:7,  loggedIn:3,  completed:2,  okr5:1 },
+  'Elisa Vetrano':           { team:4,  loggedIn:3,  completed:3,  okr5:1 },
+  'Francis Punzo':           { team:6,  loggedIn:5,  completed:3,  okr5:1 },
+  'Glen Dorney':             { team:4,  loggedIn:0,  completed:0,  okr5:0 },
+  'Govindarajan Srinivasan': { team:3,  loggedIn:3,  completed:2,  okr5:0 },
+  'Gregory Belanger':        { team:3,  loggedIn:3,  completed:1,  okr5:1 },
+  'Gregory James':           { team:5,  loggedIn:5,  completed:4,  okr5:4 },
+  'Heidi Konynenbelt':       { team:4,  loggedIn:3,  completed:3,  okr5:2 },
+  'James Liero':             { team:5,  loggedIn:4,  completed:2,  okr5:0 },
+  'Jason Finn':              { team:3,  loggedIn:2,  completed:1,  okr5:0 },
+  'Jessica Cernera':         { team:3,  loggedIn:3,  completed:1,  okr5:0 },
+  'Joe Fulmer':              { team:3,  loggedIn:3,  completed:0,  okr5:0 },
+  'John Currie Jr':          { team:3,  loggedIn:0,  completed:0,  okr5:0 },
+  'Jonathan Whitehouse':     { team:6,  loggedIn:6,  completed:2,  okr5:2 },
+  'Jordi Medina':            { team:9,  loggedIn:0,  completed:0,  okr5:0 },
+  'Josh Rockwell':           { team:6,  loggedIn:4,  completed:1,  okr5:1 },
+  'Joseph Hagerty':          { team:3,  loggedIn:1,  completed:1,  okr5:1 },
+  'Joseph Justice':          { team:3,  loggedIn:0,  completed:0,  okr5:0 },
+  'Katherine Hearns':        { team:3,  loggedIn:2,  completed:2,  okr5:2 },
+  'Lindsay Fegenbush':       { team:8,  loggedIn:8,  completed:4,  okr5:2 },
+  'Matthew Gray':            { team:10, loggedIn:4,  completed:3,  okr5:1 },
+  'Michael Basso':           { team:14, loggedIn:6,  completed:2,  okr5:2 },
+  'Michael Curry':           { team:3,  loggedIn:2,  completed:2,  okr5:1 },
+  'Monica Green':            { team:9,  loggedIn:9,  completed:7,  okr5:4 },
+  'Nicholas Ewer':           { team:3,  loggedIn:3,  completed:3,  okr5:2 },
+  'Nicholas Pidstawski':     { team:4,  loggedIn:3,  completed:1,  okr5:1 },
+  'Patricia Scaramuzzo':     { team:3,  loggedIn:1,  completed:0,  okr5:0 },
+  'Richard Lindop':          { team:3,  loggedIn:3,  completed:2,  okr5:0 },
+  'Richard Santillo':        { team:3,  loggedIn:3,  completed:2,  okr5:1 },
+  'Rommel Dumlao':           { team:3,  loggedIn:1,  completed:1,  okr5:0 },
+  'Royal Peiffer':           { team:6,  loggedIn:4,  completed:4,  okr5:4 },
+  'Ryan Gallagher':          { team:7,  loggedIn:6,  completed:3,  okr5:2 },
+  'Scott Shockley':          { team:3,  loggedIn:2,  completed:2,  okr5:2 },
+  'Srinivas Nanduri':        { team:8,  loggedIn:7,  completed:2,  okr5:0 },
+  'Steven Favorito':         { team:7,  loggedIn:6,  completed:2,  okr5:1 },
+  'Steven Ramirez':          { team:4,  loggedIn:4,  completed:2,  okr5:1 },
+  'Steven Robbins':          { team:4,  loggedIn:0,  completed:0,  okr5:0 },
+  'Suzette Steele':          { team:3,  loggedIn:3,  completed:3,  okr5:1 },
+  'Thomas Johnson':          { team:5,  loggedIn:5,  completed:2,  okr5:1 },
+  'Thomas Pienta':           { team:3,  loggedIn:3,  completed:2,  okr5:0 },
+  'Todd Dierksheide':        { team:8,  loggedIn:6,  completed:4,  okr5:2 },
+  'Todd Farnand':            { team:4,  loggedIn:3,  completed:3,  okr5:2 },
+  'Tom Schipritt':           { team:5,  loggedIn:0,  completed:0,  okr5:0 },
+  'Tracy Heberling':         { team:5,  loggedIn:3,  completed:2,  okr5:1 }
 };
 let activeManager = 'all';
 let mgrSortKey = 'team';
@@ -1447,7 +1487,7 @@ function setManager(name) {
     if (lbl) { const c = lbl.closest('.kpi-card'); if (c) c.style.display = ''; }
   }
   if (name === 'all') {
-    if (note) note.textContent = 'Showing program-wide metrics · Aug 5, 2026 export · 448 users';
+    if (note) note.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 475 users';
     updateKPITiles(activePlatform, activePathwayName === 'all' ? null : activePathwayName);
   } else {
     const m = MANAGER_DATA[name];
@@ -1457,7 +1497,7 @@ function setManager(name) {
     const oPct  = m.team > 0 ? Math.round(m.okr5      / m.team * 100) : 0;
     if (note) note.textContent = 'Filtering KPI tiles for ' + name + '’s team (' + m.team + ' members)';
     const tiles = [
-      { label:'Team Members',      value:String(m.team),      sub:'members on this manager’s team',           pill:'Aug 5, 2026 export',    pillClass:'pill-green' },
+      { label:’Team Members’,      value:String(m.team),      sub:’members on this manager’s team’,           pill:’Aug 19, 2026 export’,   pillClass:’pill-green’ },
       { label:'Logged In',         value:String(m.loggedIn),  sub:'of ' + m.team + ' · ' + liPct + '% login rate', pill:'Degreed platform',  pillClass: liPct >= 50 ? 'pill-green' : 'pill-warn' },
       { label:'Completed Content', value:String(m.completed), sub:'of ' + m.team + ' · ' + cPct + '% of team',   pill:'1+ items completed', pillClass: m.completed > 0 ? 'pill-green' : 'pill-warn' },
       { label:'OKR 5+ Met',        value:String(m.okr5),      sub:'of ' + m.team + ' · ' + oPct + '% of team',   pill:'5+ content items',   pillClass: m.okr5 > 0 ? 'pill-green' : 'pill-warn' }
@@ -1552,7 +1592,7 @@ function updateKPITiles(platform, pathway) {
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
       { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
-      { label:'Users Logged In',      value:'266',                     sub:'of 427 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+      { label:'Users Logged In',      value:'317',                     sub:'of 475 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
@@ -1590,7 +1630,7 @@ function setPlatform(p, btn) {
     const msel = document.getElementById('managerSelect');
     if (msel) msel.value = 'all';
     const mnote = document.getElementById('managerNote');
-    if (mnote) mnote.textContent = 'Showing program-wide metrics · Aug 5, 2026 export · 448 users';
+    if (mnote) mnote.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 475 users';
     for (let i = 1; i <= 6; i++) {
       const lbl = document.getElementById('kpi' + i + '-label');
       if (lbl) { const c = lbl.closest('.kpi-card'); if (c) c.style.display = ''; }
@@ -1619,7 +1659,7 @@ const SOURCE_DATES = {
   tqLearner:  'Jun 23, 2026',
   tqRoster:   'Jun 23, 2026',
   tqBoth:     'Jun 23, 2026',
-  degreedComp:'Jul 10, 2026'
+  degreedComp:'Aug 19, 2026'
 };
 
 function stampAllCards() {
