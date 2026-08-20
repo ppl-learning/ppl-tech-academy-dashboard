@@ -708,6 +708,18 @@
           <div class="chart-title">Manager Breakdown</div>
           <div class="chart-sub">Click a column header to sort &middot; Click a row to filter KPI tiles to that manager&rsquo;s team</div>
         </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+          <label style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.7px;white-space:nowrap;">L2 Org:</label>
+          <select class="manager-select" id="l2Select" onchange="setL2(this.value)" style="min-width:180px;max-width:220px;">
+            <option value="all">All Orgs</option>
+            <option value="Aron Patrick">Aron Patrick</option>
+            <option value="Christopher Bush">Christopher Bush</option>
+            <option value="Daniel Johnson">Daniel Johnson</option>
+            <option value="Dean Del Vecchio">Dean Del Vecchio</option>
+            <option value="Gregory Belanger">Gregory Belanger</option>
+            <option value="Heidi Konynenbelt">Heidi Konynenbelt</option>
+          </select>
+        </div>
       </div>
       <div class="mgr-table-wrap">
         <table class="mgr-table" id="managerTable">
@@ -722,6 +734,36 @@
             </tr>
           </thead>
           <tbody id="managerTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ IT L2 ORG SUMMARY ═══════════════ -->
+  <section class="phase-section" id="l2Section">
+    <div class="phase-header">
+      <span class="phase-badge" style="background:var(--blue)">IT Org</span>
+      <div class="phase-titles">
+        <div class="phase-title">IT L2 Org Summary</div>
+        <div class="phase-sub">339 verified IT FTEs &middot; Degreed engagement by L2 organization &middot; Aug 19, 2026 export &middot; OKR = 5+ course completions</div>
+      </div>
+      <div class="phase-line"></div>
+    </div>
+    <div class="chart-card">
+      <div class="mgr-table-wrap">
+        <table class="mgr-table" id="l2Table">
+          <thead>
+            <tr>
+              <th>L2 Leader</th>
+              <th>Headcount</th>
+              <th>Logged In</th>
+              <th>Login %</th>
+              <th>Completed Content</th>
+              <th>OKR Met (5+ Courses)</th>
+              <th>OKR %</th>
+            </tr>
+          </thead>
+          <tbody id="l2TableBody"></tbody>
         </table>
       </div>
     </div>
@@ -1491,9 +1533,12 @@ function sortManagerTable(key) {
 }
 
 function renderManagerTable() {
-  const entries = Object.entries(MANAGER_DATA).map(([name, d]) => ({
+  let entries = Object.entries(MANAGER_DATA).map(([name, d]) => ({
     name, ...d, loginPct: d.team > 0 ? d.loggedIn / d.team : 0
   }));
+  if (activeL2 !== 'all') {
+    entries = entries.filter(m => MGR_TO_L2[m.name] === activeL2);
+  }
   entries.sort((a, b) => {
     const av = a[mgrSortKey], bv = b[mgrSortKey];
     if (typeof av === 'string') return mgrSortDir * av.localeCompare(bv);
@@ -1536,6 +1581,92 @@ function initManagerFilter() {
     sel.appendChild(opt);
   });
   sortManagerTable('team');
+}
+
+// ── IT L2 Org Data (IT_L2_Mapping_Final.csv · 339 FTEs · Aug 19, 2026)
+const L2_DATA = [
+  { name:'Aron Patrick',      headcount:5,   loggedIn:5,   completed:2,  okr5:0  },
+  { name:'Christopher Bush',  headcount:35,  loggedIn:24,  completed:20, okr5:9  },
+  { name:'Daniel Johnson',    headcount:228, loggedIn:179, completed:99, okr5:22 },
+  { name:'Dean Del Vecchio',  headcount:1,   loggedIn:0,   completed:0,  okr5:0  },
+  { name:'Gregory Belanger',  headcount:42,  loggedIn:37,  completed:24, okr5:9  },
+  { name:'Heidi Konynenbelt', headcount:28,  loggedIn:26,  completed:23, okr5:11 }
+];
+
+const MGR_TO_L2 = {
+  'Adam Gross':'Daniel Johnson',         'Amanda Miller':'Heidi Konynenbelt',
+  'Andrew Miller':'Heidi Konynenbelt',   'Andrew Schwartzberg':'Daniel Johnson',
+  'Ann Seidler':'Daniel Johnson',        'Ashutosh Dogra':'Daniel Johnson',
+  'Atchuta Gollamudi':'Daniel Johnson',  'Brandon Coldiron':'Daniel Johnson',
+  'Brian Pellegrino':'Daniel Johnson',   'Christine Stofko':'Heidi Konynenbelt',
+  'Christopher Bush':'Christopher Bush', 'Christopher Martuza':'Daniel Johnson',
+  'Christopher Smith':'Daniel Johnson',  'Colleen Lammers':'Gregory Belanger',
+  'Daniel Johnson':'Daniel Johnson',     'David McLeod':'Gregory Belanger',
+  'David Ray':'Christopher Bush',        'Dawn Yunez':'Heidi Konynenbelt',
+  'Dean Del Vecchio':'Aron Patrick',     'Derrick Russell':'Heidi Konynenbelt',
+  'Desiree McGuire':'Daniel Johnson',    'Diane Mellen':'Daniel Johnson',
+  'Elisa Vetrano':'Daniel Johnson',      'Francis Punzo':'Daniel Johnson',
+  'Glen Dorney':'Christopher Bush',      'Govindarajan Srinivasan':'Daniel Johnson',
+  'Gregory Belanger':'Gregory Belanger', 'Gregory James':'Gregory Belanger',
+  'Heidi Konynenbelt':'Heidi Konynenbelt','James Liero':'Daniel Johnson',
+  'Jason Finn':'Daniel Johnson',         'Jessica Cernera':'Gregory Belanger',
+  'Joe Fulmer':'Daniel Johnson',         'Jonathan Whitehouse':'Daniel Johnson',
+  'Jordi Medina':'Christopher Bush',     'Joseph Hagerty':'Daniel Johnson',
+  'Josh Rockwell':'Daniel Johnson',      'Lindsay Fegenbush':'Christopher Bush',
+  'Matthew Gray':'Daniel Johnson',       'Michael Basso':'Daniel Johnson',
+  'Michael Curry':'Daniel Johnson',      'Monica Green':'Daniel Johnson',
+  'Nicholas Ewer':'Gregory Belanger',    'Nicholas Pidstawski':'Gregory Belanger',
+  'Richard Lindop':'Daniel Johnson',     'Richard Santillo':'Gregory Belanger',
+  'Rommel Dumlao':'Daniel Johnson',      'Royal Peiffer':'Christopher Bush',
+  'Ryan Gallagher':'Daniel Johnson',     'Srinivas Nanduri':'Daniel Johnson',
+  'Steven Favorito':'Daniel Johnson',    'Steven Ramirez':'Gregory Belanger',
+  'Suzette Steele':'Daniel Johnson',     'Thomas Johnson':'Daniel Johnson',
+  'Thomas Pienta':'Daniel Johnson',      'Todd Dierksheide':'Daniel Johnson',
+  'Todd Farnand':'Heidi Konynenbelt',    'Tracy Heberling':'Gregory Belanger'
+};
+
+let activeL2 = 'all';
+
+function setL2(name) {
+  activeL2 = name;
+  const sel = document.getElementById('l2Select');
+  if (sel) sel.value = name;
+  renderManagerTable();
+}
+
+function renderL2Table() {
+  const tbody = document.getElementById('l2TableBody');
+  if (!tbody) return;
+  const IT_TOTAL = 339;
+  let totHead = 0, totLi = 0, totComp = 0, totOkr = 0;
+  let rows = L2_DATA.map(d => {
+    totHead += d.headcount; totLi += d.loggedIn; totComp += d.completed; totOkr += d.okr5;
+    const liPct = d.headcount > 0 ? Math.round(d.loggedIn  / d.headcount * 100) : 0;
+    const oPct  = d.headcount > 0 ? Math.round(d.okr5      / d.headcount * 100) : 0;
+    const liCls = d.loggedIn  === 0 ? 'mgr-zero' : '';
+    const oCls  = d.okr5 === 0 ? 'mgr-zero' : (oPct >= 30 ? 'mgr-hi' : '');
+    return '<tr>'
+      + '<td class="mgr-name-cell">' + d.name + '</td>'
+      + '<td>' + d.headcount + '</td>'
+      + '<td class="' + liCls + '">' + d.loggedIn + '</td>'
+      + '<td class="' + liCls + '">' + liPct + '%</td>'
+      + '<td>' + d.completed + '</td>'
+      + '<td class="' + oCls + '">' + d.okr5 + '</td>'
+      + '<td class="' + oCls + '">' + oPct + '%</td>'
+      + '</tr>';
+  });
+  const totLiPct = Math.round(totLi / IT_TOTAL * 100);
+  const totOPct  = Math.round(totOkr / IT_TOTAL * 100);
+  rows.push('<tr style="font-weight:700;border-top:2px solid var(--border);">'
+    + '<td>Total IT</td>'
+    + '<td>' + totHead + '</td>'
+    + '<td>' + totLi + '</td>'
+    + '<td>' + totLiPct + '%</td>'
+    + '<td>' + totComp + '</td>'
+    + '<td>' + totOkr + '</td>'
+    + '<td>' + totOPct + '%</td>'
+    + '</tr>');
+  tbody.innerHTML = rows.join('');
 }
 
 // Track active platform so pathway filter can restore it
@@ -2389,8 +2520,9 @@ function initAll() {
   stampAllCards();
   updateKPITiles('degreed', null);
   applyCardVisibility('degreed', null);
-  // Manager filter + breakdown table
+  // Manager filter, breakdown table, and IT L2 summary
   initManagerFilter();
+  renderL2Table();
 }
 
 // SharePoint iframe fix: use window.onload + delay to ensure frame is fully ready
