@@ -503,7 +503,7 @@
   <select class="manager-select" id="managerSelect" onchange="setManager(this.value)">
     <option value="all">All Managers</option>
   </select>
-  <span class="manager-note" id="managerNote">Showing program-wide metrics &nbsp;&middot;&nbsp; Aug 19, 2026 export &nbsp;&middot;&nbsp; 475 users</span>
+  <span class="manager-note" id="managerNote">Showing program-wide metrics &nbsp;&middot;&nbsp; Aug 19, 2026 export &nbsp;&middot;&nbsp; 339 IT FTEs</span>
 </div>
 
 <!-- FILTER BAR -->
@@ -576,7 +576,7 @@
       <div class="kpi-card c-teal">
         <div class="kpi-label" id="kpi6-label">Users Logged In</div>
         <div class="kpi-value" id="kpi6-value">317</div>
-        <div class="kpi-sub"   id="kpi6-sub">of 475 total Degreed users</div>
+        <div class="kpi-sub"   id="kpi6-sub">of 339 IT FTEs</div>
         <div class="kpi-pill pill-green" id="kpi6-pill">Users who have logged into Degreed</div>
       </div>
     </div>
@@ -1386,7 +1386,7 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',          pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'2,454', sub:'TQ 961h + Degreed 1,493h',        pill:'Avg 3.4h / learner',       pillClass:'pill-green' },
     { label:'Degreed Completions',        value:'1,466', sub:'by 185 unique learners',           pill:'Cumulative all-time',      pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 339 IT FTEs',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   tq: [
     { label:'Total Enrolled',            value:'436',   sub:'TQ platform learners',            pill:'↑ +9 since Apr 3',         pillClass:'pill-green' },
@@ -1394,15 +1394,15 @@ const KPI_DATA = {
     { label:'Program Completions',        value:'929',   sub:'across all TQ programs',           pill:'84.0% completion rate',    pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'961',   sub:'TQ platform hours',                pill:'Avg 2.20h / learner',      pillClass:'pill-green' },
     { label:'Avg Concept Completion',     value:'87.4%', sub:'per enrollment record',            pill:'TQ Roster data',           pillClass:'pill-green' },
-    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+    { label:'Users Logged In',            value:'317',   sub:'of 339 IT FTEs',       pill:'Users who have logged into Degreed', pillClass:'pill-green' }
   ],
   degreed: [
-    { label:'Users Logged In',            value:'317',   sub:'of 475 total Degreed users',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
+    { label:'Users Logged In',            value:'317',   sub:'of 339 IT FTEs',       pill:'Users who have logged into Degreed',        pillClass:'pill-green' },
     { label:'Completed Content',          value:'185',   sub:'of 317 users logged in',           pill:'Users who have completed 1 or more items',  pillClass:'pill-green' },
     { label:'Content Completions',        value:'1,466', sub:'across all content types',         pill:'Courses, Articles, Videos',                 pillClass:'pill-green' },
     { label:'Course Completions',         value:'760',   sub:'course-type content',              pill:'Aug 19, 2026 export',                       pillClass:'pill-green' },
     { label:'Total Learning Hours',       value:'1,493', sub:'Degreed learning hours',           pill:'Avg 8.1h / learner',                        pillClass:'pill-green' },
-    { label:'Learning Goal Met',          value:'13%',   sub:'60 of 475 licensed users completed 5+ courses', pill:'OKR target tracker',           pillClass:'pill-green' }
+    { label:'Learning Goal Met',          value:'18%',   sub:'60 of 339 IT FTEs completed 5+ courses',        pill:'OKR target tracker',           pillClass:'pill-green' }
   ]
 };
 
@@ -1492,7 +1492,7 @@ function setManager(name) {
     if (lbl) { const c = lbl.closest('.kpi-card'); if (c) c.style.display = ''; }
   }
   if (name === 'all') {
-    if (note) note.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 475 users';
+    if (note) note.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 339 IT FTEs';
     updateKPITiles(activePlatform, activePathwayName === 'all' ? null : activePathwayName);
   } else {
     const m = MANAGER_DATA[name];
@@ -1683,7 +1683,7 @@ function updateKPITiles(platform, pathway) {
       { label:'Required Completions', value:String(s.required),        sub:'of ' + s.completions + ' total',   pill:s.required === s.completions ? 'All required' : 'Incl. optional', pillClass:'pill-green' },
       { label:'Learning Hours',       value:s.hours.toFixed(1) + 'h', sub:'estimated in pathway',              pill:'Avg ' + avgH + 'h / learner',    pillClass:'pill-green' },
       { label:'TQ Data',              value:'N/A',                     sub:'TQ hidden — pathway filter active', pill:'Degreed only',                   pillClass:'pill-warn'  },
-      { label:'Users Logged In',      value:'317',                     sub:'of 475 total Degreed users',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
+      { label:'Users Logged In',      value:'317',                     sub:'of 339 IT FTEs',        pill:'Users who have logged into Degreed', pillClass:'pill-green' }
     ];
   } else {
     tiles = KPI_DATA[platform] || KPI_DATA.both;
@@ -1721,7 +1721,7 @@ function setPlatform(p, btn) {
     const msel = document.getElementById('managerSelect');
     if (msel) msel.value = 'all';
     const mnote = document.getElementById('managerNote');
-    if (mnote) mnote.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 475 users';
+    if (mnote) mnote.textContent = 'Showing program-wide metrics · Aug 19, 2026 export · 339 IT FTEs';
     for (let i = 1; i <= 6; i++) {
       const lbl = document.getElementById('kpi' + i + '-label');
       if (lbl) { const c = lbl.closest('.kpi-card'); if (c) c.style.display = ''; }
